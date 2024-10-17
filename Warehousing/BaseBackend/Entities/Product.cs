@@ -73,6 +73,7 @@ namespace BaseBackend.Entities
             Unit = unit;
         }
         #endregion
+
         #region Method
         public int Quantity
         {
@@ -84,10 +85,6 @@ namespace BaseBackend.Entities
                     Quantity = value;
                 }
             }
-        }
-        internal decimal GetTotalValue()
-        {
-            throw new NotImplementedException();
         }
 
         // متد برای به‌روزرسانی موجودی کالا
@@ -110,18 +107,6 @@ namespace BaseBackend.Entities
             return DateTime.Now > ExpiryDate;
         }
 
-        // نمایش اطلاعات کالا
-        public void DisplayProductInfo()
-        {
-            Console.WriteLine($"ID: {Id}");
-            Console.WriteLine($"Name: {ProductName}");
-            Console.WriteLine($"Description: {Description}");
-            Console.WriteLine($"Price: {Price:C}");
-            Console.WriteLine($"Quantity in Stock: {Quantity}");
-            Console.WriteLine($"Category: {Category}");
-            Console.WriteLine($"Expiry Date: {ExpiryDate.ToShortDateString()}");
-        }
-
         // متد برای کاهش موجودی پس از فروش کالا
         public bool SellProduct(int quantity)
         {
@@ -131,10 +116,7 @@ namespace BaseBackend.Entities
                 return true;  // فروش موفقیت‌آمیز بود
             }
             else
-            {
-                Console.WriteLine("Not enough stock available.");
                 return false; // موجودی کافی نیست
-            }
         }
 
         //برای به‌روزرسانی اطلاعات محصول
@@ -145,17 +127,12 @@ namespace BaseBackend.Entities
 
             if (newPrice > 0)
                 Price = newPrice;
-            else
-                Console.WriteLine("Invalid price. Update failed.");
 
-            // به روز رسانی دسته بندی
+            // به روزرسانی گره محصول
             Category = newCategory;
-
 
             if (newQuantity >= 0)
                 Quantity = newQuantity;
-            else
-                Console.WriteLine("Invalid quantity. Update failed.");
         }
 
         // لیستی از محصولات منقضی شده

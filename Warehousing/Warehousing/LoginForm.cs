@@ -24,7 +24,7 @@ namespace Warehousing
                 return;
             }
             if (string.IsNullOrEmpty(txtUserName.Text) || string.IsNullOrEmpty(txtPassword.Text)) return;
-            if ((txtUserName.Text == "admin") && (txtPassword.Text == "123"))
+            if ((txtUserName.Text == "admin") && (txtPassword.Text == "admin"))
             {
                 
                 MainForm frmMain = new MainForm();

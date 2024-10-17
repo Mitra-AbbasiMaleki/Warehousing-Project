@@ -27,16 +27,6 @@ namespace BaseBackend.Entities
             RegistrationDate = DateTime.Now; // ثبت تاریخ فعلی به عنوان تاریخ ثبت‌نام
             Orders = new List<Order>();  // ایجاد لیست خالی برای سوابق سفارش
         }
-        //برای ایجاد سفارش جدید
-        public void CreateOrder(Order newOrder)
-        {
-            // بررسی اینکه آیا سفارشی با این orderId وجود دارد
-            if (!Orders.Any(o => o.Id == newOrder.Id))
-            {
-                Orders.Add(newOrder);
-            }
-
-        }
 
         // افزودن سفارش به سوابق مشتری
         public void AddOrder(Order order)

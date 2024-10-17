@@ -15,6 +15,7 @@ namespace BaseBackend.Entities
         public string NationalCode { get; set; }   //کد ملی
         public string PhoneNumber { get; set; }    // شماره تماس
         public string Address { get; set; }        // آدرس
+        //پیاده سازی اینترفیس
         public DateTime CreatedAt { get; set; } //تاریخ ایجاد
         public int CreatedByUserId { get; set; } //شخص ایجاد کننده
         public DateTime updatedAt { get; set; } //تاریخ بروزرسانی
@@ -64,11 +65,6 @@ namespace BaseBackend.Entities
             Console.WriteLine("اطلاعات تماس مشتری به‌روزرسانی شد.");
         }
 
-        //پیاده سازی اینترفیس سفارش
-        public void PlaceOrder(Order order)
-        {
-            throw new NotImplementedException();
-        }
     }
     
 }

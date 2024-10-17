@@ -83,35 +83,11 @@ namespace BaseBackend.Entities
             return null; // اگر محصول یافت نشد
         }
 
-        // نمایش تمام کالاهای موجود در انبار
-        public void DisplayAllProducts()
-        {
-            if (Inventory.Count > 0)
-            {
-                foreach (var product in Inventory)
-                {
-                    product.Key.DisplayProductInfo();
-                    Console.WriteLine("-------------------------");
-                }
-            }
-            else
-            {
-                Console.WriteLine("No products available in the warehouse.");
-            }
-        }
-
-       // چک کردن موجودی یک کالا
-        public void CheckStock(int productId)
+       // چک کردن موجود بودن یک کالا
+        public bool IsValidQuantity(int productId)
         {
             var product = FindProductById(productId);
-            if (product != null)
-            {
-                Console.WriteLine($"Product: {product.ProductName}, Quantity in stock: {product.Quantity}");
-            }
-            else
-            {
-                Console.WriteLine("Product not found in the warehouse.");
-            }
+            return product!=null? true : false;
         }
     }
 

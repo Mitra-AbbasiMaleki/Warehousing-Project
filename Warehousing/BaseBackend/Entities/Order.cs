@@ -15,13 +15,14 @@ namespace BaseBackend.Entities
         public DateTime OrderDate { get; set; }  //تاریخ ثبت سفارش
         public string CustomerName { get; set; }   // مرجع به مشتری که سفارش را داده است
         public List<OrderItem> Items { get; set; } // لیست آیتم‌های موجود در سفارش
-        public decimal TotalAmount
+        public decimal TotalAmount  // مبلغ کل سفارش
         {
             get
             {
                 return Items.Sum(item => item.TotalPrice);
             }
-        }  // مبلغ کل سفارش
+        }
+        
         public Dictionary<Product, int> Products { get; set; } = new Dictionary<Product, int>();   // لیست محصولات و تعداد آنها
 
         // سازنده

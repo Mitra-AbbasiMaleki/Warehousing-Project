@@ -106,7 +106,7 @@
             this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPassword.Size = new System.Drawing.Size(183, 23);
             this.txtPassword.TabIndex = 4;
-            this.txtPassword.Text = "123";
+            this.txtPassword.Text = "admin";
             // 
             // txtUserName
             // 

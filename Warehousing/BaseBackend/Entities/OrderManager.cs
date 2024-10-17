@@ -16,10 +16,6 @@ namespace BaseBackend.Entities
             return newOrder;
         }
 
-        public void DisplayOrders()
-        {
-           // foreach (var order in Orders)
-        }
     }
 
 }
