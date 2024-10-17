@@ -1,6 +1,4 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
 namespace BaseBackend.Entities
 {
     public class Inventory

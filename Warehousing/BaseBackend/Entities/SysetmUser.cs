@@ -19,7 +19,7 @@ namespace BaseBackend.Entities
                 }
                 else
                 {
-                    throw new Exception("رمز عبور باید حداقل 6 کاراکتر باشد.");
+                    throw new Exception("رمز عبور باید حداقل 5 کاراکتر باشد.");
                 }
             }
         }

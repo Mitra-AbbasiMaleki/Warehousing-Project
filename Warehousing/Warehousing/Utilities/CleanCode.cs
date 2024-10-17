@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Warehousing.Utilities
 {
@@ -54,9 +55,9 @@ namespace Warehousing.Utilities
 
             return (((c < 2) && (a == c)) || ((c >= 2) && ((11 - c) == a)));
         }
-        
+
         /// <summary>
-        /// Check Name Format
+        /// Checks that all characters are letters
         /// </summary>
         /// <param name="name"></param>
         /// <returns>if all string is char return True else return False</returns>
@@ -65,5 +66,6 @@ namespace Warehousing.Utilities
             // بررسی اینکه آیا تمامی کاراکترها حروف هستند
             return name.All(char.IsLetter);
         }
+        
     }
 }

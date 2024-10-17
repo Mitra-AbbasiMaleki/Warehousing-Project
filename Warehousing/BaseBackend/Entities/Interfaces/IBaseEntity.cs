@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BaseBackend.Entities.Interfaces
+﻿namespace BaseBackend.Entities.Interfaces
 {
     public interface IBaseEntity
     {

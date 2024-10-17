@@ -13,12 +13,11 @@ namespace BaseBackend.Entities
         public int Id { get; set; }   // شناسه محصول
         public string ProductName { get; set; }     // نام محصول
         public ProductCategory Category { get; set; } //گروه محصول
-        //private int Quantity { get; set; }    // مقدار موجود
+        public int Quantity { get; set; } //تعداد محصول
         public decimal Price { get; set; }   // قیمت خرید
         public DateTime ExpiryDate { get; set; }  //تاریخ انقضا
         public string Description { get; set; }   //توضیحات محصول
-        
-        //public Warehouse Warehouse { get; set; }  //ارجاع به انیار
+        public Warehouse Warehouse { get; set; }  //ارجاع به انیار
         public ProductStatus Status { get; set; } // وضعیت محصول
         public MeasurementUnit Unit { get; set; } //واحد اندازه گیری
 
@@ -34,8 +33,7 @@ namespace BaseBackend.Entities
 
         #region constructor
         //کلاس سازنده محصولات
-        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,
-                   DateTime expiryDate, string description)
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,DateTime expiryDate, string description)
         {
             Id = nextId;
             nextId++;
@@ -75,17 +73,7 @@ namespace BaseBackend.Entities
         #endregion
 
         #region Method
-        public int Quantity
-        {
-            get { return Quantity; }
-            private set
-            {
-                if (value >= 0)
-                {
-                    Quantity = value;
-                }
-            }
-        }
+       
 
         // متد برای به‌روزرسانی موجودی کالا
         public void UpdateQuantity(int newQuantity)

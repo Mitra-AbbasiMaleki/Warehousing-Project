@@ -56,7 +56,10 @@ namespace Warehousing
             };
             
             AddPerson(addPerson);
-
+            //Message
+            MessageBox.Show("مشتری با موفقیت ثبت شد");
+            //Reset
+            ResetCustomerForm();
         }
         public void AddPerson(AddPerson addPerson)
         {
@@ -79,9 +82,9 @@ namespace Warehousing
                     MessageBox.Show("لطفاعنوان راانتخاب کنید.");
                     return;
             } 
-            MessageBox.Show("مشتری با موفقیت ثبت شد");
+            
             this.Close();
-            //ResetCustomerForm();
+
         }
         private bool ISValidateRegistrationForm()
         {

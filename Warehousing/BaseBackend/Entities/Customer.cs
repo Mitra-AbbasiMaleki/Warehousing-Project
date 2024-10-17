@@ -3,7 +3,6 @@ using BaseBackend.Entities.Interfaces;
 using BaseBackend.Enums;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 namespace BaseBackend.Entities
 {
     public class Customer:Person, IBaseEntity
