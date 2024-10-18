@@ -33,7 +33,7 @@ namespace BaseBackend.Entities
 
         #region constructor
         //کلاس سازنده محصولات
-        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,DateTime expiryDate, string description)
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,Warehouse warehouse,DateTime expiryDate, string description)
         {
             Id = nextId;
             nextId++;
@@ -42,6 +42,7 @@ namespace BaseBackend.Entities
             Quantity = quantity;
             Unit = unit;
             Price = price;
+            Warehouse = warehouse;
             ExpiryDate = expiryDate;
             Description = description;
             Status = ProductStatus.InStock;

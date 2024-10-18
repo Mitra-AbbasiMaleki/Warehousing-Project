@@ -45,7 +45,7 @@ namespace Warehousing.Utilities
         /// <returns>Date Time Format</returns>
         public static DateTime ToExpirationDate(this string expirationDate)
         {
-            string format = "MM/dd/yyyy";
+            string format = "dd/mm/yyyy";
             // تلاش برای تبدیل رشته به فرمت تاریخ
             if (DateTime.TryParseExact(expirationDate, format, null, System.Globalization.DateTimeStyles.None, out DateTime expDate))
             {

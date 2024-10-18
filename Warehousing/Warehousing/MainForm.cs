@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaseBackend.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,5 @@ namespace Warehousing
             OrderForm orderform = new OrderForm();
             orderform.Show();
         }
-
     }
 }

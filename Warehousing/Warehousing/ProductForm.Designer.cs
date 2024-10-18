@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             this.grpNewPruduct = new System.Windows.Forms.GroupBox();
+            this.mtxFirstQuantity = new System.Windows.Forms.MaskedTextBox();
+            this.chkCentralWarehouse = new System.Windows.Forms.CheckBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtSupplier = new System.Windows.Forms.TextBox();
+            this.mtxExpiryDate = new System.Windows.Forms.MaskedTextBox();
+            this.lblExpiryDate = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblWarehous = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRial = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.lblSupplier = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -40,24 +47,17 @@
             this.cmbProductGroup = new System.Windows.Forms.ComboBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.lblExpiryDate = new System.Windows.Forms.Label();
-            this.mtxExpiryDate = new System.Windows.Forms.MaskedTextBox();
-            this.txtSupplier = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
             this.btnProductRegistration = new System.Windows.Forms.Button();
-            this.lblWarehous = new System.Windows.Forms.Label();
-            this.chkCentralWarehouse = new System.Windows.Forms.CheckBox();
-            this.txtFirstQuantity = new System.Windows.Forms.TextBox();
             this.grpNewPruduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpNewPruduct
             // 
             this.grpNewPruduct.AutoSize = true;
+            this.grpNewPruduct.Controls.Add(this.mtxFirstQuantity);
             this.grpNewPruduct.Controls.Add(this.chkCentralWarehouse);
-            this.grpNewPruduct.Controls.Add(this.txtFirstQuantity);
             this.grpNewPruduct.Controls.Add(this.txtDescription);
             this.grpNewPruduct.Controls.Add(this.txtSupplier);
             this.grpNewPruduct.Controls.Add(this.mtxExpiryDate);
@@ -87,6 +87,85 @@
             this.grpNewPruduct.TabStop = false;
             this.grpNewPruduct.Text = "مشخصات کالا";
             // 
+            // mtxFirstQuantity
+            // 
+            this.mtxFirstQuantity.Location = new System.Drawing.Point(236, 148);
+            this.mtxFirstQuantity.Mask = "00000";
+            this.mtxFirstQuantity.Name = "mtxFirstQuantity";
+            this.mtxFirstQuantity.Size = new System.Drawing.Size(107, 27);
+            this.mtxFirstQuantity.TabIndex = 3;
+            // 
+            // chkCentralWarehouse
+            // 
+            this.chkCentralWarehouse.AutoSize = true;
+            this.chkCentralWarehouse.Location = new System.Drawing.Point(236, 241);
+            this.chkCentralWarehouse.Name = "chkCentralWarehouse";
+            this.chkCentralWarehouse.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chkCentralWarehouse.Size = new System.Drawing.Size(102, 23);
+            this.chkCentralWarehouse.TabIndex = 6;
+            this.chkCentralWarehouse.Text = "انبار مرکزی";
+            this.chkCentralWarehouse.UseVisualStyleBackColor = true;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(58, 381);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(284, 27);
+            this.txtDescription.TabIndex = 9;
+            // 
+            // txtSupplier
+            // 
+            this.txtSupplier.Location = new System.Drawing.Point(131, 332);
+            this.txtSupplier.Name = "txtSupplier";
+            this.txtSupplier.Size = new System.Drawing.Size(211, 27);
+            this.txtSupplier.TabIndex = 8;
+            // 
+            // mtxExpiryDate
+            // 
+            this.mtxExpiryDate.Location = new System.Drawing.Point(185, 283);
+            this.mtxExpiryDate.Mask = "00/00/0000";
+            this.mtxExpiryDate.Name = "mtxExpiryDate";
+            this.mtxExpiryDate.Size = new System.Drawing.Size(158, 27);
+            this.mtxExpiryDate.TabIndex = 7;
+            // 
+            // lblExpiryDate
+            // 
+            this.lblExpiryDate.AutoSize = true;
+            this.lblExpiryDate.Location = new System.Drawing.Point(349, 283);
+            this.lblExpiryDate.Name = "lblExpiryDate";
+            this.lblExpiryDate.Size = new System.Drawing.Size(88, 19);
+            this.lblExpiryDate.TabIndex = 10;
+            this.lblExpiryDate.Text = "تاریخ انقضا :";
+            // 
+            // lblSupplier
+            // 
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(349, 335);
+            this.lblSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(102, 19);
+            this.lblSupplier.TabIndex = 12;
+            this.lblSupplier.Text = " تامین کننده :";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(349, 384);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(78, 19);
+            this.lblDescription.TabIndex = 15;
+            this.lblDescription.Text = "توضیحات :";
+            // 
+            // lblWarehous
+            // 
+            this.lblWarehous.AutoSize = true;
+            this.lblWarehous.Location = new System.Drawing.Point(349, 238);
+            this.lblWarehous.Name = "lblWarehous";
+            this.lblWarehous.Size = new System.Drawing.Size(45, 19);
+            this.lblWarehous.TabIndex = 18;
+            this.lblWarehous.Text = "انبار :";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -104,26 +183,6 @@
             this.lblRial.Size = new System.Drawing.Size(34, 19);
             this.lblRial.TabIndex = 9;
             this.lblRial.Text = "ریال";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(349, 384);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(78, 19);
-            this.lblDescription.TabIndex = 15;
-            this.lblDescription.Text = "توضیحات :";
-            // 
-            // lblSupplier
-            // 
-            this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(349, 335);
-            this.lblSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSupplier.Name = "lblSupplier";
-            this.lblSupplier.Size = new System.Drawing.Size(102, 19);
-            this.lblSupplier.TabIndex = 12;
-            this.lblSupplier.Text = " تامین کننده :";
             // 
             // lblQuantity
             // 
@@ -183,30 +242,6 @@
             this.txtPrice.Size = new System.Drawing.Size(159, 27);
             this.txtPrice.TabIndex = 5;
             // 
-            // lblExpiryDate
-            // 
-            this.lblExpiryDate.AutoSize = true;
-            this.lblExpiryDate.Location = new System.Drawing.Point(349, 283);
-            this.lblExpiryDate.Name = "lblExpiryDate";
-            this.lblExpiryDate.Size = new System.Drawing.Size(88, 19);
-            this.lblExpiryDate.TabIndex = 10;
-            this.lblExpiryDate.Text = "تاریخ انقضا :";
-            // 
-            // mtxExpiryDate
-            // 
-            this.mtxExpiryDate.Location = new System.Drawing.Point(185, 283);
-            this.mtxExpiryDate.Mask = "00/00/0000";
-            this.mtxExpiryDate.Name = "mtxExpiryDate";
-            this.mtxExpiryDate.Size = new System.Drawing.Size(158, 27);
-            this.mtxExpiryDate.TabIndex = 7;
-            // 
-            // txtSupplier
-            // 
-            this.txtSupplier.Location = new System.Drawing.Point(131, 332);
-            this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(211, 27);
-            this.txtSupplier.TabIndex = 8;
-            // 
             // lblUnit
             // 
             this.lblUnit.AutoSize = true;
@@ -215,13 +250,6 @@
             this.lblUnit.Size = new System.Drawing.Size(51, 19);
             this.lblUnit.TabIndex = 5;
             this.lblUnit.Text = "واحد :";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(58, 381);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(284, 27);
-            this.txtDescription.TabIndex = 9;
             // 
             // cmbUnit
             // 
@@ -241,33 +269,6 @@
             this.btnProductRegistration.Text = "ثبت کالا";
             this.btnProductRegistration.UseVisualStyleBackColor = true;
             this.btnProductRegistration.Click += new System.EventHandler(this.btnProductRegistration_Click);
-            // 
-            // lblWarehous
-            // 
-            this.lblWarehous.AutoSize = true;
-            this.lblWarehous.Location = new System.Drawing.Point(349, 238);
-            this.lblWarehous.Name = "lblWarehous";
-            this.lblWarehous.Size = new System.Drawing.Size(45, 19);
-            this.lblWarehous.TabIndex = 18;
-            this.lblWarehous.Text = "انبار :";
-            // 
-            // chkCentralWarehouse
-            // 
-            this.chkCentralWarehouse.AutoSize = true;
-            this.chkCentralWarehouse.Location = new System.Drawing.Point(236, 241);
-            this.chkCentralWarehouse.Name = "chkCentralWarehouse";
-            this.chkCentralWarehouse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chkCentralWarehouse.Size = new System.Drawing.Size(102, 23);
-            this.chkCentralWarehouse.TabIndex = 6;
-            this.chkCentralWarehouse.Text = "انبار مرکزی";
-            this.chkCentralWarehouse.UseVisualStyleBackColor = true;
-            // 
-            // txtFirstQuantity
-            // 
-            this.txtFirstQuantity.Location = new System.Drawing.Point(236, 151);
-            this.txtFirstQuantity.Name = "txtFirstQuantity";
-            this.txtFirstQuantity.Size = new System.Drawing.Size(105, 27);
-            this.txtFirstQuantity.TabIndex = 3;
             // 
             // ProductForm
             // 
@@ -310,6 +311,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblWarehous;
         private System.Windows.Forms.CheckBox chkCentralWarehouse;
-        private System.Windows.Forms.TextBox txtFirstQuantity;
+        private System.Windows.Forms.MaskedTextBox mtxFirstQuantity;
     }
 }

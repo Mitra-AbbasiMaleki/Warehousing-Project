@@ -11,13 +11,27 @@ namespace Warehousing
 {
     public partial class PersonForm : Form
     {
-        List<Customer> customers;
-        List<Supplier> suppliers;
+        List<Customer> Customers;
+        List<Supplier> Suppliers;
+        List<SysetmUser> SystemUsers;
         public PersonForm()
         {
             //Initial Value Form
-            customers = new List<Customer>();
-            suppliers = new List<Supplier>();
+            Customers = new List<Customer>();
+            Suppliers = new List<Supplier>();
+            SystemUsers = new List<SysetmUser>();
+            SysetmUser Admin = new SysetmUser(role: UserRole.ADMIN, firstName: "mitra", lastName: "abbasi", nationalCode: "5310111107", phoneNumber: "09123456789", address: "tehran");
+            SysetmUser User = new SysetmUser(role: UserRole.USER, firstName: "elham", lastName: "maleki", nationalCode: "7078184262", phoneNumber: "09987654321", address: "karaj");
+            Customer customer1 = new Customer(role: UserRole.CUSTOMER, firstName: "ali", lastName: "alavi", nationalCode: "4320101014", phoneNumber: "09123456789", address: "esfahan");
+            Customer customer2 = new Customer(role: UserRole.CUSTOMER, firstName: "reza", lastName: "rezaee", nationalCode: "0295255684", phoneNumber: "09187664321", address: "tabriz");
+            Supplier supplier1 = new Supplier(role: UserRole.SUPPLIER, companyName: "kaleh", firstName: "ahmad", lastName: "ahmadi", nationalCode: "1971614866", phoneNumber: "09363636363", address: "hamadan");
+            Supplier supplier2 = new Supplier(role: UserRole.SUPPLIER, companyName: "LG", firstName: "taha", lastName: "moradi", nationalCode: "0937955027", phoneNumber: "09854565352", address: "shiraz");
+            SystemUsers.Add(Admin);
+            SystemUsers.Add(User);
+            Customers.Add(customer1);
+            Customers.Add(customer2);
+            Suppliers.Add(supplier1);
+            Suppliers.Add(supplier2);
             InitializeComponent();
         }
         private void btnCustomerRegister_Click(object sender, EventArgs e)
@@ -72,11 +86,11 @@ namespace Warehousing
                     break;
                 case 3:
                     Customer customer = new Customer(role: addPerson.Role, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
-                    customers.Add(customer);
+                    Customers.Add(customer);
                     break;
                 case 4:
                     Supplier supplier=new Supplier(role: addPerson.Role, companyName:addPerson.CompanyName, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
-                    suppliers.Add(supplier);
+                    Suppliers.Add(supplier);
                     break;
                 default:
                     MessageBox.Show("لطفاعنوان راانتخاب کنید.");

@@ -11,11 +11,19 @@ namespace Warehousing
 {
     public partial class ProductForm : Form
     {
-        List<Warehouse> Warehouses;
+        List<Product> Products = new List<Product>();
+        List<Warehouse> Warehouses = new List<Warehouse>();
+        Warehouse CentralWarehouse = new Warehouse(name: "Central", location: "Central Warehouse");
         public ProductForm()
         {
-            Warehouse CentralWarehouse = new Warehouse(name: "Central", location: "Central Warehouse");
-            Warehouses = new List<Warehouse>();
+            Product Cloth = new Product(name: "Silk-Fabric", category: ProductCategory.Clothing, quantity: 20, unit: MeasurementUnit.Metr);
+            Product Mobile = new Product(name: "Iphone15", quantity: 3, price: 250000000);
+            Product Laptop = new Product(name: "Asus", category: ProductCategory.Electronics, quantity: 1);
+            Product Butter = new Product(name: "Pak", category: ProductCategory.grocery, quantity: 10, unit: MeasurementUnit.pieces, price: 50000, warehouse: CentralWarehouse, expiryDate: new DateTime(1403, 09, 25), description: " Pak Butter");
+            Products.Add(Cloth);
+            Products.Add(Mobile);
+            Products.Add(Laptop);
+            Products.Add(Butter);
             Warehouses.Add(CentralWarehouse);
             InitializeComponent();
         }
@@ -29,29 +37,29 @@ namespace Warehousing
         private void btnProductRegistration_Click(object sender, EventArgs e)
         {
             //call validation
-            if (!ISValidateRegistrationForm())
+            if (!ISValidateProductForm())
                 return;
 
             ProductCategory categorySelected =(ProductCategory)cmbProductGroup.SelectedItem;
             MeasurementUnit unitSelected = (MeasurementUnit)cmbUnit.SelectedItem;
             DateTime expirationDate = mtxExpiryDate.Text.ToExpirationDate();
-            Warehouse warehouseSelected = new Warehouse();
+            Warehouse Warehouseselected = new Warehouse();
             if (chkCentralWarehouse.Checked)
             {
                 var warehouse = Warehouses.FirstOrDefault(w => w.Name == chkCentralWarehouse.Text);
                 if (warehouse != null)
                 {
-                    warehouseSelected = warehouse; // انبار انتخاب شده را به لیست اضافه می‌کند
+                    Warehouseselected = warehouse; // انبار انتخاب شده را به لیست اضافه می‌کند
                 }
             }
             AddProduct addProduct = new AddProduct()
             {
                 ProductName = txtProductName.Text,
                 Category = categorySelected,
-                Quantity = Convert.ToInt32(txtFirstQuantity.Text),
+                Quantity = Convert.ToInt32(mtxFirstQuantity.Text),
                 Price = Convert.ToDecimal(txtPrice.Text),
                 ExpiryDate = expirationDate,
-                Warehouse = warehouseSelected,
+                Warehouse = Warehouseselected,
                 Unit = unitSelected,
                 Description = txtDescription.Text
             };
@@ -64,14 +72,14 @@ namespace Warehousing
         }
         public void AddProduct(AddProduct addProduct)
         {
-            Product product = new Product(name:addProduct.ProductName,category:addProduct.Category,quantity:addProduct.Quantity,unit:addProduct.Unit,price:addProduct.Price,expiryDate:addProduct.ExpiryDate,description:addProduct.Description);
-            
-            this.Close();
+            //creat object
+            Product product = new Product(name:addProduct.ProductName,category:addProduct.Category,quantity:addProduct.Quantity,unit:addProduct.Unit,price:addProduct.Price,warehouse:addProduct.Warehouse,expiryDate:addProduct.ExpiryDate,description:addProduct.Description);
+            Products.Add(product);
         }
-        private bool ISValidateRegistrationForm()
+        private bool ISValidateProductForm()
         {
             if (string.IsNullOrEmpty(txtProductName.Text) ||
-                string.IsNullOrEmpty(txtFirstQuantity.Text) ||
+                string.IsNullOrEmpty(mtxFirstQuantity.Text) ||
                 cmbUnit.SelectedItem == null||
                 string.IsNullOrEmpty(txtPrice.Text))
             {
@@ -85,7 +93,7 @@ namespace Warehousing
         {
             txtProductName.Text = string.Empty;
             cmbProductGroup.SelectedIndex = 0;
-            txtFirstQuantity.Text = string.Empty;
+            mtxFirstQuantity.Text = string.Empty;
             cmbUnit.Text = string.Empty;
             txtPrice.Text = string.Empty;
             mtxExpiryDate.Text = string.Empty;
