@@ -1,4 +1,7 @@
-﻿namespace Warehousing
+﻿using System;
+using System.Windows.Forms;
+
+namespace Warehousing
 {
     partial class MainForm
     {
@@ -28,70 +31,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNewCustomer = new System.Windows.Forms.Button();
-            this.btnNewProduct = new System.Windows.Forms.Button();
-            this.btnNewOrder = new System.Windows.Forms.Button();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.personMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPersonMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newProductMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newOrderMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnNewCustomer
+            // menuStrip
             // 
-            this.btnNewCustomer.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewCustomer.Location = new System.Drawing.Point(429, 37);
-            this.btnNewCustomer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNewCustomer.Name = "btnNewCustomer";
-            this.btnNewCustomer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNewCustomer.Size = new System.Drawing.Size(141, 88);
-            this.btnNewCustomer.TabIndex = 0;
-            this.btnNewCustomer.Text = "مشتری جدید";
-            this.btnNewCustomer.UseVisualStyleBackColor = true;
-            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            this.menuStrip.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personMenu,
+            this.productMenu,
+            this.orderMenu});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip.Size = new System.Drawing.Size(572, 29);
+            this.menuStrip.TabIndex = 0;
             // 
-            // btnNewProduct
+            // personMenu
             // 
-            this.btnNewProduct.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewProduct.Location = new System.Drawing.Point(262, 37);
-            this.btnNewProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNewProduct.Name = "btnNewProduct";
-            this.btnNewProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNewProduct.Size = new System.Drawing.Size(141, 88);
-            this.btnNewProduct.TabIndex = 0;
-            this.btnNewProduct.Text = "کالای جدید";
-            this.btnNewProduct.UseVisualStyleBackColor = true;
-            this.btnNewProduct.Click += new System.EventHandler(this.btnNewProduct_Click);
+            this.personMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newPersonMenuItem});
+            this.personMenu.Name = "personMenu";
+            this.personMenu.Size = new System.Drawing.Size(127, 23);
+            this.personMenu.Text = "مدیریت اشخاص";
             // 
-            // btnNewOrder
+            // newPersonMenuItem
             // 
-            this.btnNewOrder.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewOrder.Location = new System.Drawing.Point(97, 37);
-            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnNewOrder.Size = new System.Drawing.Size(141, 88);
-            this.btnNewOrder.TabIndex = 0;
-            this.btnNewOrder.Text = "سفارش جدید";
-            this.btnNewOrder.UseVisualStyleBackColor = true;
-            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
+            this.newPersonMenuItem.Name = "newPersonMenuItem";
+            this.newPersonMenuItem.Size = new System.Drawing.Size(205, 24);
+            this.newPersonMenuItem.Text = "تعریف شخص جدید";
+            this.newPersonMenuItem.Click += new System.EventHandler(this.NewPersonMenuItem_Click);
+            // 
+            // productMenu
+            // 
+            this.productMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newProductMenu});
+            this.productMenu.Name = "productMenu";
+            this.productMenu.Size = new System.Drawing.Size(134, 23);
+            this.productMenu.Text = "مدیریت محصولات";
+            // 
+            // newProductMenu
+            // 
+            this.newProductMenu.Name = "newProductMenu";
+            this.newProductMenu.Size = new System.Drawing.Size(207, 24);
+            this.newProductMenu.Text = "تعریف محصول جدید";
+            this.newProductMenu.Click += new System.EventHandler(this.NewProductMenu_Click);
+            // 
+            // orderMenu
+            // 
+            this.orderMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newOrderMenu});
+            this.orderMenu.Name = "orderMenu";
+            this.orderMenu.Size = new System.Drawing.Size(142, 23);
+            this.orderMenu.Text = "مدیریت سفارشات";
+            // 
+            // newOrderMenu
+            // 
+            this.newOrderMenu.Name = "newOrderMenu";
+            this.newOrderMenu.Size = new System.Drawing.Size(213, 24);
+            this.newOrderMenu.Text = "تعریف سفارش جدید";
+            this.newOrderMenu.Click += new System.EventHandler(this.NewOrderMenu_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 413);
-            this.Controls.Add(this.btnNewCustomer);
-            this.Controls.Add(this.btnNewProduct);
-            this.Controls.Add(this.btnNewOrder);
-            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientSize = new System.Drawing.Size(572, 343);
+            this.Controls.Add(this.menuStrip);
+            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
+            this.RightToLeftLayout = true;
             this.Text = "صفحه اصلی";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.menuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.Button btnNewProduct;
-        private System.Windows.Forms.Button btnNewOrder;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem personMenu;
+        private ToolStripMenuItem newPersonMenuItem;
+        private ToolStripMenuItem productMenu;
+        private ToolStripMenuItem newProductMenu;
+        private ToolStripMenuItem orderMenu;
+        private ToolStripMenuItem newOrderMenu;
     }
 }

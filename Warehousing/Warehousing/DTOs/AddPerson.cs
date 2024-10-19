@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using BaseBackend.Entities;
 using BaseBackend.Enums;
 
 namespace Warehousing.DTOs
@@ -10,7 +11,7 @@ namespace Warehousing.DTOs
         public string LastName { get; set; }       // نام خانوادگی
         public string NationalCode { get; set; }   //کد ملی
         public string PhoneNumber { get; set; }    // شماره تماس
-        public string Address { get; set; }  // آدرس
+        public Address Address { get; set; }  // آدرس
         public string CompanyName { get; set;} // نام شرکت
     }
 }

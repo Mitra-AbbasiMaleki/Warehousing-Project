@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HojjatShariffam\\Source\\Repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj": {}
+    "C:\\Users\\HojjatShariffam\\source\\repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HojjatShariffam\\Source\\Repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj": {
+    "C:\\Users\\HojjatShariffam\\source\\repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HojjatShariffam\\Source\\Repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj",
+        "projectUniqueName": "C:\\Users\\HojjatShariffam\\source\\repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj",
         "projectName": "BaseBackend",
-        "projectPath": "C:\\Users\\HojjatShariffam\\Source\\Repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj",
+        "projectPath": "C:\\Users\\HojjatShariffam\\source\\repos\\Warehousing-Project\\Warehousing\\BaseBackend\\BaseBackend.csproj",
         "packagesPath": "C:\\Users\\HojjatShariffam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HojjatShariffam\\Source\\Repos\\Warehousing-Project\\Warehousing\\BaseBackend\\obj\\",
+        "outputPath": "C:\\Users\\HojjatShariffam\\source\\repos\\Warehousing-Project\\Warehousing\\BaseBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\"

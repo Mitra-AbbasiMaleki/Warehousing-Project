@@ -9,7 +9,7 @@ namespace BaseBackend.Entities
         public string CompanyName { get; set; } //نام شرکت
         public List<Product> Products { get; set; }// لیست کالاهایی که تامین میکند
         //کلاس سازنده تامین کننده
-        public Supplier(UserRole role, string companyName,string firstName,string lastName,string nationalCode,string phoneNumber, string address)
+        public Supplier(UserRole role, string companyName,string firstName,string lastName,string nationalCode,string phoneNumber, Address address)
             :base(role,firstName,  lastName, nationalCode,phoneNumber,address)     //فراخوانی سازنده کلاس پایه
         {
             CompanyName = companyName;

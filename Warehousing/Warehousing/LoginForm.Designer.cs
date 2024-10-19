@@ -52,19 +52,22 @@
             this.grpLogin.Controls.Add(this.txtPassword);
             this.grpLogin.Controls.Add(this.txtUserName);
             this.grpLogin.Controls.Add(this.lblUsername);
-            this.grpLogin.Location = new System.Drawing.Point(12, 97);
+            this.grpLogin.Location = new System.Drawing.Point(15, 123);
+            this.grpLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpLogin.Name = "grpLogin";
+            this.grpLogin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grpLogin.Size = new System.Drawing.Size(359, 248);
+            this.grpLogin.Size = new System.Drawing.Size(462, 314);
             this.grpLogin.TabIndex = 0;
             this.grpLogin.TabStop = false;
             this.grpLogin.Text = "اطلاعات ورود";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(44, 190);
+            this.btnLogin.Location = new System.Drawing.Point(57, 241);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(183, 41);
+            this.btnLogin.Size = new System.Drawing.Size(235, 52);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "ورود";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -73,57 +76,63 @@
             // lblAccesslevel
             // 
             this.lblAccesslevel.AutoSize = true;
-            this.lblAccesslevel.Location = new System.Drawing.Point(259, 138);
+            this.lblAccesslevel.Location = new System.Drawing.Point(333, 175);
+            this.lblAccesslevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAccesslevel.Name = "lblAccesslevel";
-            this.lblAccesslevel.Size = new System.Drawing.Size(83, 15);
+            this.lblAccesslevel.Size = new System.Drawing.Size(131, 19);
             this.lblAccesslevel.TabIndex = 2;
             this.lblAccesslevel.Text = "سطح دسترسی :";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(259, 86);
+            this.lblPassword.Location = new System.Drawing.Point(333, 109);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(55, 15);
+            this.lblPassword.Size = new System.Drawing.Size(74, 19);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "رمز عبور :";
             // 
             // cmbAccessLevel
             // 
             this.cmbAccessLevel.FormattingEnabled = true;
-            this.cmbAccessLevel.Location = new System.Drawing.Point(44, 135);
+            this.cmbAccessLevel.Location = new System.Drawing.Point(57, 171);
+            this.cmbAccessLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbAccessLevel.Name = "cmbAccessLevel";
             this.cmbAccessLevel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbAccessLevel.Size = new System.Drawing.Size(183, 23);
+            this.cmbAccessLevel.Size = new System.Drawing.Size(234, 27);
             this.cmbAccessLevel.TabIndex = 5;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(44, 83);
+            this.txtPassword.Location = new System.Drawing.Point(57, 105);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPassword.Size = new System.Drawing.Size(183, 23);
+            this.txtPassword.Size = new System.Drawing.Size(234, 27);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = "admin";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(44, 40);
+            this.txtUserName.Location = new System.Drawing.Point(57, 51);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PlaceholderText = "UserName";
             this.txtUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUserName.Size = new System.Drawing.Size(183, 23);
+            this.txtUserName.Size = new System.Drawing.Size(234, 27);
             this.txtUserName.TabIndex = 3;
             this.txtUserName.Text = "admin";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(259, 43);
+            this.lblUsername.Location = new System.Drawing.Point(333, 54);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(65, 15);
+            this.lblUsername.Size = new System.Drawing.Size(87, 19);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "نام کاربری :";
             // 
@@ -131,10 +140,12 @@
             // 
             this.grpTime.Controls.Add(this.lblDate);
             this.grpTime.Controls.Add(this.lbltime);
-            this.grpTime.Location = new System.Drawing.Point(13, 13);
+            this.grpTime.Location = new System.Drawing.Point(17, 16);
+            this.grpTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpTime.Name = "grpTime";
+            this.grpTime.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grpTime.Size = new System.Drawing.Size(358, 64);
+            this.grpTime.Size = new System.Drawing.Size(460, 81);
             this.grpTime.TabIndex = 1;
             this.grpTime.TabStop = false;
             this.grpTime.Text = "تاریخ و زمان";
@@ -142,29 +153,33 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(258, 28);
+            this.lblDate.Location = new System.Drawing.Point(332, 35);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(31, 15);
+            this.lblDate.Size = new System.Drawing.Size(41, 19);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Date";
             // 
             // lbltime
             // 
             this.lbltime.AutoSize = true;
-            this.lbltime.Location = new System.Drawing.Point(43, 28);
+            this.lbltime.Location = new System.Drawing.Point(55, 35);
+            this.lbltime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltime.Name = "lbltime";
             this.lbltime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbltime.Size = new System.Drawing.Size(34, 15);
+            this.lbltime.Size = new System.Drawing.Size(45, 19);
             this.lbltime.TabIndex = 0;
             this.lbltime.Text = "Time";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 350);
+            this.ClientSize = new System.Drawing.Size(485, 443);
             this.Controls.Add(this.grpLogin);
             this.Controls.Add(this.grpTime);
+            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.Text = "صفحه ورود";
             this.Load += new System.EventHandler(this.FormLogin_Load);

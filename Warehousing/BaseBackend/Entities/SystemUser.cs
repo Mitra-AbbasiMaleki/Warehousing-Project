@@ -4,7 +4,7 @@ using BaseBackend.Enums;
 using System;
 namespace BaseBackend.Entities
 {
-    public class SysetmUser:Person, IBaseEntity, ICreateableEntity, IDeleteableEntity, IUpdatableEntity
+    public class SystemUser : Person, IBaseEntity
     {
         public decimal Salary { get; set; }       // حقوق
         public string UserName { get; private set; }  //نام کاربری
@@ -24,23 +24,23 @@ namespace BaseBackend.Entities
             }
         }
         //کلاس سازنده کارمند
-        public SysetmUser(string userName,string password,UserRole role, string firstName, string lastName, string nationalCode, string phoneNumber, string address)
+        public SystemUser(UserRole role,string userName,string password, string firstName, string lastName, string nationalCode, string phoneNumber, Address address)
             : base(role, firstName, lastName, nationalCode, phoneNumber, address)//فراخوانی سازنده کلاس پایه
         {
             UserName = userName;
             Password = password;
         }
-        public SysetmUser(UserRole role, string firstName, string lastName, string nationalCode, string phoneNumber, string address)
+        public SystemUser(UserRole role, string firstName, string lastName, string nationalCode, string phoneNumber, Address address)
             : base(role, firstName, lastName, nationalCode, phoneNumber, address)//فراخوانی سازنده کلاس پایه
         {
         }
-        public SysetmUser(UserRole role, string firstName, string lastName, string nationalCode)
-            : base(role, firstName, lastName, nationalCode)//فراخوانی سازنده کلاس پایه
+        public SystemUser(UserRole role, string firstName, string lastName, string nationalCode)
+            : base()//فراخوانی سازنده کلاس پایه
         {
         }
 
         // ویرایش اطلاعات تماس کاربر
-        public new void UpdateContactInfo(string newPhoneNumber, string newEmail, string newAddress)
+        public new void UpdateContactInfo(string newPhoneNumber, string newEmail, Address newAddress)
         {
             PhoneNumber = newPhoneNumber;
             Address = newAddress;

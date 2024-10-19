@@ -13,15 +13,16 @@ namespace BaseBackend.Entities
         public List<Order> Orders { get; set; }  // سوابق سفارش
 
         // سازنده کلاس
-        public Customer(UserRole role,string firstName, string lastName, string nationalCode, string phoneNumber, string address)
-        : base(role,firstName, lastName, nationalCode,phoneNumber,address)  //فراخوانی سازنده کلاس پایه
+        public Customer()
         {
             RegistrationDate = DateTime.Now; // ثبت تاریخ فعلی به عنوان تاریخ ثبت‌نام
             Orders = new List<Order>();  // ایجاد لیست خالی برای سوابق سفارش
         }
-
-        public Customer (UserRole role,string firstName, string lastName, string nationalCode)
-        : base(role,firstName, lastName, nationalCode)  //فراخوانی سازنده کلاس پایه
+        public Customer(UserRole role, string firstName, string lastName, string nationalCode):base(role, firstName, lastName, nationalCode) //فراخوانی سازنده کلاس پایه
+        {
+            
+        }
+        public Customer(UserRole role,string firstName, string lastName, string nationalCode, string phoneNumber, Address address): base(role, firstName, lastName, nationalCode, phoneNumber, address)  //فراخوانی سازنده کلاس پایه
         {
             RegistrationDate = DateTime.Now; // ثبت تاریخ فعلی به عنوان تاریخ ثبت‌نام
             Orders = new List<Order>();  // ایجاد لیست خالی برای سوابق سفارش

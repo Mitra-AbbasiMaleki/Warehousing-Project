@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Warehousing",
+    "\\Warehousing\\BaseBackend",
+    "\\Warehousing\\Warehousing"
   ],
+  "SelectedNode": "\\Warehousing\\Warehousing.sln",
   "PreviewInSolutionExplorer": false
 }

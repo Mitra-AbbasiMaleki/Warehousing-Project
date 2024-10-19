@@ -16,13 +16,16 @@ namespace BaseBackend.Entities
 
         // سازنده
         public Warehouse()
-        { 
-        }
-        public Warehouse(string name,string location)
         {
             Id = nextId;
             nextId++;
+        }
+        public Warehouse(string name):this()
+        {
             Name = name;
+        }
+        public Warehouse(string name,string location):this(name)
+        {
             Location = location;
             Inventory = new Dictionary<Product, int>();// لیستی از محصولات و موجودی هرکدام برای انبار
         }

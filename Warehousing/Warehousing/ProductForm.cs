@@ -1,5 +1,4 @@
 ﻿using BaseBackend.Entities;
-using BaseBackend.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,27 +10,43 @@ namespace Warehousing
 {
     public partial class ProductForm : Form
     {
-        List<Product> Products = new List<Product>();
-        List<Warehouse> Warehouses = new List<Warehouse>();
-        Warehouse CentralWarehouse = new Warehouse(name: "Central", location: "Central Warehouse");
+        List<Product> products;
+        List<Warehouse>warehouses;
+        List<ProductCategory> categories;
+        Warehouse centralWarehouse;
+        Warehouse otherWarehouse;
+        List<MeasurementUnit> units;
         public ProductForm()
         {
-            Product Cloth = new Product(name: "Silk-Fabric", category: ProductCategory.Clothing, quantity: 20, unit: MeasurementUnit.Metr);
+            centralWarehouse = new Warehouse(name: "Central", location: "Tehran");
+            otherWarehouse = new Warehouse(name: "Other", location: "Karaj");
+            warehouses = new List<Warehouse> { centralWarehouse, otherWarehouse };
+            ProductCategory Electronics = new ProductCategory("electronics");
+            ProductCategory Grocery = new ProductCategory("grocery");
+            ProductCategory Clothing = new ProductCategory("clothing");
+            ProductCategory Furniture = new ProductCategory("furniture");
+            categories= new List<ProductCategory>() { Electronics,Grocery,Clothing,Furniture};
+
+            MeasurementUnit Kilogeram = new MeasurementUnit("kilogeram");
+            MeasurementUnit Pieces = new MeasurementUnit("pieces");
+            MeasurementUnit Litre = new MeasurementUnit("litre");
+            MeasurementUnit Metr = new MeasurementUnit("metr");
+            units = new List<MeasurementUnit>() {Kilogeram,Pieces,Litre,Metr };
+
+            Product Cloth = new Product(name: "Silk-Fabric", category: Clothing, quantity: 20, unit: Metr);
             Product Mobile = new Product(name: "Iphone15", quantity: 3, price: 250000000);
-            Product Laptop = new Product(name: "Asus", category: ProductCategory.Electronics, quantity: 1);
-            Product Butter = new Product(name: "Pak", category: ProductCategory.grocery, quantity: 10, unit: MeasurementUnit.pieces, price: 50000, warehouse: CentralWarehouse, expiryDate: new DateTime(1403, 09, 25), description: " Pak Butter");
-            Products.Add(Cloth);
-            Products.Add(Mobile);
-            Products.Add(Laptop);
-            Products.Add(Butter);
-            Warehouses.Add(CentralWarehouse);
+            Product Laptop = new Product(name: "Asus", quantity: 1,price:500000000);
+            Product Butter = new Product(name: "Pak", category: Grocery, quantity: 10, unit: Pieces, price: 50000, warehouse: centralWarehouse, expiryDate: new DateTime(1403, 09, 25), description: " Pak Butter");
+            products = new List<Product>() { Cloth, Mobile, Laptop, Butter };
+
             InitializeComponent();
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            cmbProductGroup.DataSource = Enum.GetValues(typeof(ProductCategory));
-            cmbUnit.DataSource = Enum.GetValues(typeof(MeasurementUnit));
+            cmbUnit.DataSource = units;
+            cmbProductGroup.DataSource = categories;
+            RefreshDataGridView();
         }
 
         private void btnProductRegistration_Click(object sender, EventArgs e)
@@ -43,15 +58,22 @@ namespace Warehousing
             ProductCategory categorySelected =(ProductCategory)cmbProductGroup.SelectedItem;
             MeasurementUnit unitSelected = (MeasurementUnit)cmbUnit.SelectedItem;
             DateTime expirationDate = mtxExpiryDate.Text.ToExpirationDate();
-            Warehouse Warehouseselected = new Warehouse();
+            Warehouse warehouselected;
             if (chkCentralWarehouse.Checked)
             {
-                var warehouse = Warehouses.FirstOrDefault(w => w.Name == chkCentralWarehouse.Text);
-                if (warehouse != null)
-                {
-                    Warehouseselected = warehouse; // انبار انتخاب شده را به لیست اضافه می‌کند
-                }
+                warehouselected = centralWarehouse;  // اختصاص انبار مرکزی
             }
+            else if (chkOtherWarehouse.Checked)
+            {
+                warehouselected = otherWarehouse;  // اختصاص انبار ضایعات
+            }
+            else
+            {
+                MessageBox.Show("لطفاً یک انبار انتخاب کنید.");
+                return;
+            }
+ 
+            //DTO
             AddProduct addProduct = new AddProduct()
             {
                 ProductName = txtProductName.Text,
@@ -59,7 +81,7 @@ namespace Warehousing
                 Quantity = Convert.ToInt32(mtxFirstQuantity.Text),
                 Price = Convert.ToDecimal(txtPrice.Text),
                 ExpiryDate = expirationDate,
-                Warehouse = Warehouseselected,
+                Warehouse = warehouselected,
                 Unit = unitSelected,
                 Description = txtDescription.Text
             };
@@ -74,7 +96,8 @@ namespace Warehousing
         {
             //creat object
             Product product = new Product(name:addProduct.ProductName,category:addProduct.Category,quantity:addProduct.Quantity,unit:addProduct.Unit,price:addProduct.Price,warehouse:addProduct.Warehouse,expiryDate:addProduct.ExpiryDate,description:addProduct.Description);
-            Products.Add(product);
+            products.Add(product);
+            RefreshDataGridView();
         }
         private bool ISValidateProductForm()
         {
@@ -99,6 +122,15 @@ namespace Warehousing
             mtxExpiryDate.Text = string.Empty;
             txtSupplier.Text = string.Empty;
             txtDescription.Text = string.Empty;
+        }
+        private void RefreshDataGridView()
+        {
+            productDataGridView.DataSource = null;
+            productDataGridView.DataSource = products;
+            productDataGridView.Columns["Category"].Visible = false;
+            productDataGridView.Columns["Unit"].Visible = false;
+            productDataGridView.Columns["Warehouse"].Visible = false;
+
         }
     }
 }

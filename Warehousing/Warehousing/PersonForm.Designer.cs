@@ -29,146 +29,251 @@
         private void InitializeComponent()
         {
             this.grpPerson = new System.Windows.Forms.GroupBox();
+            this.btnCustomerRegister = new System.Windows.Forms.Button();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblStreet = new System.Windows.Forms.Label();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.lblNumber = new System.Windows.Forms.Label();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.lblProvince = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.txtStreet = new System.Windows.Forms.TextBox();
-            this.lblStreet = new System.Windows.Forms.Label();
-            this.lblProvince = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.lblNumber = new System.Windows.Forms.Label();
-            this.txtNumber = new System.Windows.Forms.TextBox();
-            this.txtProvince = new System.Windows.Forms.TextBox();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtNationalCode = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.lblNationalCode = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.btnCustomerRegister = new System.Windows.Forms.Button();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtNationalCode = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.txtProvince = new System.Windows.Forms.TextBox();
             this.grpPerson.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpPerson
             // 
             this.grpPerson.AutoSize = true;
-            this.grpPerson.Controls.Add(this.lblCompanyName);
-            this.grpPerson.Controls.Add(this.txtCompanyName);
-            this.grpPerson.Controls.Add(this.lblAddress);
-            this.grpPerson.Controls.Add(this.txtStreet);
+            this.grpPerson.Controls.Add(this.btnCustomerRegister);
+            this.grpPerson.Controls.Add(this.cmbUserRole);
+            this.grpPerson.Controls.Add(this.txtFirstName);
+            this.grpPerson.Controls.Add(this.lblFirstName);
             this.grpPerson.Controls.Add(this.lblStreet);
+            this.grpPerson.Controls.Add(this.txtPhoneNumber);
+            this.grpPerson.Controls.Add(this.lblPhoneNumber);
+            this.grpPerson.Controls.Add(this.txtStreet);
             this.grpPerson.Controls.Add(this.lblProvince);
-            this.grpPerson.Controls.Add(this.lblCity);
-            this.grpPerson.Controls.Add(this.txtCity);
+            this.grpPerson.Controls.Add(this.lblRole);
+            this.grpPerson.Controls.Add(this.lblAddress);
+            this.grpPerson.Controls.Add(this.lblLastName);
+            this.grpPerson.Controls.Add(this.txtLastName);
+            this.grpPerson.Controls.Add(this.txtCompanyName);
+            this.grpPerson.Controls.Add(this.txtProvince);
+            this.grpPerson.Controls.Add(this.txtNationalCode);
+            this.grpPerson.Controls.Add(this.lblNationalCode);
+            this.grpPerson.Controls.Add(this.lblCompanyName);
             this.grpPerson.Controls.Add(this.lblNumber);
             this.grpPerson.Controls.Add(this.txtNumber);
-            this.grpPerson.Controls.Add(this.txtProvince);
-            this.grpPerson.Controls.Add(this.txtPhoneNumber);
-            this.grpPerson.Controls.Add(this.lblFirstName);
-            this.grpPerson.Controls.Add(this.txtNationalCode);
-            this.grpPerson.Controls.Add(this.txtLastName);
-            this.grpPerson.Controls.Add(this.txtFirstName);
-            this.grpPerson.Controls.Add(this.lblLastName);
-            this.grpPerson.Controls.Add(this.cmbUserRole);
-            this.grpPerson.Controls.Add(this.lblNationalCode);
-            this.grpPerson.Controls.Add(this.lblRole);
-            this.grpPerson.Controls.Add(this.btnCustomerRegister);
-            this.grpPerson.Controls.Add(this.lblPhoneNumber);
-            this.grpPerson.Location = new System.Drawing.Point(21, 21);
+            this.grpPerson.Controls.Add(this.lblCity);
+            this.grpPerson.Controls.Add(this.txtCity);
+            this.grpPerson.Location = new System.Drawing.Point(14, 14);
+            this.grpPerson.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpPerson.Name = "grpPerson";
+            this.grpPerson.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpPerson.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grpPerson.Size = new System.Drawing.Size(476, 424);
+            this.grpPerson.Size = new System.Drawing.Size(1029, 293);
             this.grpPerson.TabIndex = 0;
             this.grpPerson.TabStop = false;
             this.grpPerson.Text = "مشخصات شخص";
             // 
+            // btnCustomerRegister
+            // 
+            this.btnCustomerRegister.Location = new System.Drawing.Point(693, 222);
+            this.btnCustomerRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCustomerRegister.Name = "btnCustomerRegister";
+            this.btnCustomerRegister.Size = new System.Drawing.Size(288, 44);
+            this.btnCustomerRegister.TabIndex = 9;
+            this.btnCustomerRegister.Text = "ثبت مشتری";
+            this.btnCustomerRegister.UseVisualStyleBackColor = true;
+            this.btnCustomerRegister.Click += new System.EventHandler(this.btnCustomerRegister_Click);
+            // 
+            // txtCity
+            // 
+            this.txtCity.Location = new System.Drawing.Point(20, 145);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(190, 26);
+            this.txtCity.TabIndex = 6;
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(231, 148);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(47, 18);
+            this.lblCity.TabIndex = 12;
+            this.lblCity.Text = "شهر :";
+            // 
+            // lblStreet
+            // 
+            this.lblStreet.AutoSize = true;
+            this.lblStreet.Location = new System.Drawing.Point(538, 205);
+            this.lblStreet.Name = "lblStreet";
+            this.lblStreet.Size = new System.Drawing.Size(55, 18);
+            this.lblStreet.TabIndex = 14;
+            this.lblStreet.Text = "خیابان :";
+            // 
+            // txtNumber
+            // 
+            this.txtNumber.Location = new System.Drawing.Point(20, 202);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(190, 26);
+            this.txtNumber.TabIndex = 8;
+            // 
+            // lblNumber
+            // 
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Location = new System.Drawing.Point(231, 206);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(47, 18);
+            this.lblNumber.TabIndex = 17;
+            this.lblNumber.Text = "پلاک :";
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.Location = new System.Drawing.Point(320, 201);
+            this.txtStreet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(195, 26);
+            this.txtStreet.TabIndex = 7;
+            // 
+            // lblProvince
+            // 
+            this.lblProvince.AutoSize = true;
+            this.lblProvince.Location = new System.Drawing.Point(538, 149);
+            this.lblProvince.Name = "lblProvince";
+            this.lblProvince.Size = new System.Drawing.Size(56, 18);
+            this.lblProvince.TabIndex = 10;
+            this.lblProvince.Text = "استان :";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(610, 147);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(52, 18);
+            this.lblAddress.TabIndex = 4;
+            this.lblAddress.Text = "آدرس :";
+            // 
+            // cmbUserRole
+            // 
+            this.cmbUserRole.FormattingEnabled = true;
+            this.cmbUserRole.Location = new System.Drawing.Point(693, 41);
+            this.cmbUserRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbUserRole.Name = "cmbUserRole";
+            this.cmbUserRole.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbUserRole.Size = new System.Drawing.Size(195, 26);
+            this.cmbUserRole.TabIndex = 18;
+            this.cmbUserRole.SelectedIndexChanged += new System.EventHandler(this.cmbUserRole_SelectedIndexChanged);
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(693, 89);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(195, 26);
+            this.txtFirstName.TabIndex = 1;
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(910, 93);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(48, 18);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "* نام :";
+            // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(910, 41);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(53, 18);
+            this.lblRole.TabIndex = 19;
+            this.lblRole.Text = "عنوان :";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(538, 90);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(111, 18);
+            this.lblLastName.TabIndex = 1;
+            this.lblLastName.Text = "* نام خانوادگی :";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(320, 86);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(195, 26);
+            this.txtLastName.TabIndex = 2;
+            // 
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(121, 39);
+            this.lblCompanyName.Location = new System.Drawing.Point(538, 42);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(58, 15);
+            this.lblCompanyName.Size = new System.Drawing.Size(82, 18);
             this.lblCompanyName.TabIndex = 20;
             this.lblCompanyName.Text = "نام شرکت :";
             // 
             // txtCompanyName
             // 
             this.txtCompanyName.Enabled = false;
-            this.txtCompanyName.Location = new System.Drawing.Point(5, 34);
+            this.txtCompanyName.Location = new System.Drawing.Point(320, 38);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(110, 23);
+            this.txtCompanyName.Size = new System.Drawing.Size(195, 26);
             this.txtCompanyName.TabIndex = 21;
             // 
-            // lblAddress
+            // lblNationalCode
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(410, 273);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(36, 15);
-            this.lblAddress.TabIndex = 4;
-            this.lblAddress.Text = "آدرس :";
+            this.lblNationalCode.AutoSize = true;
+            this.lblNationalCode.Location = new System.Drawing.Point(231, 91);
+            this.lblNationalCode.Name = "lblNationalCode";
+            this.lblNationalCode.Size = new System.Drawing.Size(79, 18);
+            this.lblNationalCode.TabIndex = 2;
+            this.lblNationalCode.Text = "* کد ملی :";
             // 
-            // txtStreet
+            // txtPhoneNumber
             // 
-            this.txtStreet.Location = new System.Drawing.Point(212, 305);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(109, 23);
-            this.txtStreet.TabIndex = 7;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(693, 148);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(195, 26);
+            this.txtPhoneNumber.TabIndex = 4;
             // 
-            // lblStreet
+            // txtNationalCode
             // 
-            this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(327, 308);
-            this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(43, 15);
-            this.lblStreet.TabIndex = 14;
-            this.lblStreet.Text = "خیابان :";
+            this.txtNationalCode.Location = new System.Drawing.Point(20, 87);
+            this.txtNationalCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNationalCode.Name = "txtNationalCode";
+            this.txtNationalCode.Size = new System.Drawing.Size(190, 26);
+            this.txtNationalCode.TabIndex = 3;
             // 
-            // lblProvince
+            // lblPhoneNumber
             // 
-            this.lblProvince.AutoSize = true;
-            this.lblProvince.Location = new System.Drawing.Point(327, 273);
-            this.lblProvince.Name = "lblProvince";
-            this.lblProvince.Size = new System.Drawing.Size(40, 15);
-            this.lblProvince.TabIndex = 10;
-            this.lblProvince.Text = "استان :";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(170, 268);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(33, 15);
-            this.lblCity.TabIndex = 12;
-            this.lblCity.Text = "شهر :";
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(55, 265);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(109, 23);
-            this.txtCity.TabIndex = 6;
-            // 
-            // lblNumber
-            // 
-            this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(170, 308);
-            this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(31, 15);
-            this.lblNumber.TabIndex = 17;
-            this.lblNumber.Text = "پلاک :";
-            // 
-            // txtNumber
-            // 
-            this.txtNumber.Location = new System.Drawing.Point(55, 305);
-            this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(109, 23);
-            this.txtNumber.TabIndex = 8;
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(910, 152);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(101, 18);
+            this.lblPhoneNumber.TabIndex = 3;
+            this.lblPhoneNumber.Text = "شماره موبایل :";
             // 
             // txtProvince
             // 
@@ -189,110 +294,20 @@
             "Khorasan"});
             this.txtProvince.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtProvince.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtProvince.Location = new System.Drawing.Point(212, 265);
+            this.txtProvince.Location = new System.Drawing.Point(320, 144);
+            this.txtProvince.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(109, 23);
+            this.txtProvince.Size = new System.Drawing.Size(195, 26);
             this.txtProvince.TabIndex = 5;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(198, 219);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(155, 23);
-            this.txtPhoneNumber.TabIndex = 4;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(372, 93);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(34, 15);
-            this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "* نام :";
-            // 
-            // txtNationalCode
-            // 
-            this.txtNationalCode.Location = new System.Drawing.Point(198, 175);
-            this.txtNationalCode.Name = "txtNationalCode";
-            this.txtNationalCode.Size = new System.Drawing.Size(155, 23);
-            this.txtNationalCode.TabIndex = 3;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(198, 134);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(155, 23);
-            this.txtLastName.TabIndex = 2;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(198, 90);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(155, 23);
-            this.txtFirstName.TabIndex = 1;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(372, 134);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(81, 15);
-            this.lblLastName.TabIndex = 1;
-            this.lblLastName.Text = "* نام خانوادگی :";
-            // 
-            // cmbUserRole
-            // 
-            this.cmbUserRole.FormattingEnabled = true;
-            this.cmbUserRole.Location = new System.Drawing.Point(198, 36);
-            this.cmbUserRole.Name = "cmbUserRole";
-            this.cmbUserRole.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbUserRole.Size = new System.Drawing.Size(155, 23);
-            this.cmbUserRole.TabIndex = 18;
-            this.cmbUserRole.SelectedIndexChanged += new System.EventHandler(this.cmbUserRole_SelectedIndexChanged);
-            // 
-            // lblNationalCode
-            // 
-            this.lblNationalCode.AutoSize = true;
-            this.lblNationalCode.Location = new System.Drawing.Point(372, 178);
-            this.lblNationalCode.Name = "lblNationalCode";
-            this.lblNationalCode.Size = new System.Drawing.Size(53, 15);
-            this.lblNationalCode.TabIndex = 2;
-            this.lblNationalCode.Text = "* کد ملی :";
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(372, 36);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(39, 15);
-            this.lblRole.TabIndex = 19;
-            this.lblRole.Text = "عنوان :";
-            // 
-            // btnCustomerRegister
-            // 
-            this.btnCustomerRegister.Location = new System.Drawing.Point(54, 354);
-            this.btnCustomerRegister.Name = "btnCustomerRegister";
-            this.btnCustomerRegister.Size = new System.Drawing.Size(392, 48);
-            this.btnCustomerRegister.TabIndex = 9;
-            this.btnCustomerRegister.Text = "ثبت مشتری";
-            this.btnCustomerRegister.UseVisualStyleBackColor = true;
-            this.btnCustomerRegister.Click += new System.EventHandler(this.btnCustomerRegister_Click);
-            // 
-            // lblPhoneNumber
-            // 
-            this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(372, 222);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(74, 15);
-            this.lblPhoneNumber.TabIndex = 3;
-            this.lblPhoneNumber.Text = "شماره موبایل :";
             // 
             // PersonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 469);
+            this.ClientSize = new System.Drawing.Size(1064, 532);
             this.Controls.Add(this.grpPerson);
+            this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PersonForm";
             this.Text = "فرم تعریف شخص";
             this.Load += new System.EventHandler(this.PersonForm_Load);

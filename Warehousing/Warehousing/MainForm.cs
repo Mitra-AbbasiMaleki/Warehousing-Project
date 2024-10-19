@@ -1,5 +1,4 @@
-﻿using BaseBackend.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,22 +15,30 @@ namespace Warehousing
             InitializeComponent();
         }
 
-        private void btnNewCustomer_Click(object sender, EventArgs e)
+        // رویداد برای کلیک بر روی شخص جدید
+        private void NewPersonMenuItem_Click(object sender, EventArgs e)
         {
-            PersonForm customerForm = new PersonForm();
-            customerForm.ShowDialog();
+            PersonForm personForm = new PersonForm();
+            personForm.Show();
         }
 
-        private void btnNewProduct_Click(object sender, EventArgs e)
+        // رویداد برای کلیک بر روی محصول جدید
+        private void NewProductMenu_Click(object sender, EventArgs e)
         {
             ProductForm productForm = new ProductForm();
             productForm.Show();
         }
 
-        private void btnNewOrder_Click(object sender, EventArgs e)
+        // رویداد برای کلیک بر روی سفارش جدید
+        private void NewOrderMenu_Click(object sender, EventArgs e)
         {
-            OrderForm orderform = new OrderForm();
-            orderform.Show();
+            OrderForm orderForm = new OrderForm();
+            orderForm.Show();
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
+

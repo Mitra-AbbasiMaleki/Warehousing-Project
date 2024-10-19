@@ -6,13 +6,17 @@ using BaseBackend.Enums;
 
 namespace BaseBackend.Entities
 {
-    public class Product : IBaseEntity,ICreateableEntity, IDeleteableEntity,IUpdatableEntity
+    public class Product : IBaseEntity
     {
         #region property
         private static int nextId = 1; //متغیر static برای تولید Id بعدی
         public int Id { get; set; }   // شناسه محصول
         public string ProductName { get; set; }     // نام محصول
         public ProductCategory Category { get; set; } //گروه محصول
+        public string CategoryName
+        {
+            get { return Category != null ? Category.CategoryName : "No Category"; }
+        }
         public int Quantity { get; set; } //تعداد محصول
         public decimal Price { get; set; }   // قیمت خرید
         public DateTime ExpiryDate { get; set; }  //تاریخ انقضا
@@ -20,50 +24,52 @@ namespace BaseBackend.Entities
         public Warehouse Warehouse { get; set; }  //ارجاع به انیار
         public ProductStatus Status { get; set; } // وضعیت محصول
         public MeasurementUnit Unit { get; set; } //واحد اندازه گیری
+        public string UnitName
+        { 
+            get { return Unit != null ? Unit.Name : "No Unit"; } 
+        }
+        public string WarehouseName
+        {
+            get { return Warehouse != null ? Warehouse.Name : "No Warehouse"; }
+        }
 
-        public DateTime CreatedAt { get; set; } //تاریخ ایجاد
-        public int CreatedByUserId { get; set; } //شخص ایجاد کننده
-        public DateTime updatedAt { get; set; } //تاریخ بروزرسانی
-        public int UpdatedByUserId { get; set; } // شخص بروزرسانی کننده
-        public bool IsDeleted { get; set; } //خذف شده
-        public DateTime DeletedAt { get; set; } //تاریخ حذف
-        public int DeletedByUserId { get; set; } //شخص حذف کننده
-        public object Name { get; internal set; }
+        //public DateTime CreatedAt { get; set; } //تاریخ ایجاد
+        //public int CreatedByUserId { get; set; } //شخص ایجاد کننده
+        //public DateTime updatedAt { get; set; } //تاریخ بروزرسانی
+        //public int UpdatedByUserId { get; set; } // شخص بروزرسانی کننده
+        //public bool IsDeleted { get; set; } //خذف شده
+        //public DateTime DeletedAt { get; set; } //تاریخ حذف
+        //public int DeletedByUserId { get; set; } //شخص حذف کننده
         #endregion
 
         #region constructor
-        //کلاس سازنده محصولات
-        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,Warehouse warehouse,DateTime expiryDate, string description)
+        //   کلاس سازنده محصولات
+        public Product()
         {
             Id = nextId;
             nextId++;
+        }
+        public Product(string name, int quantity, decimal price):this()
+        {
+            ProductName = name;
+            Quantity = quantity;
+            Price = price;
+        }
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price):this()
+        {
             ProductName = name;
             Category = category;
             Quantity = quantity;
             Unit = unit;
             Price = price;
+        }
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,Warehouse warehouse,DateTime expiryDate, string description):this(name,category,quantity,unit,price)
+        {
             Warehouse = warehouse;
             ExpiryDate = expiryDate;
             Description = description;
             Status = ProductStatus.InStock;
         }
-        public Product(string name,ProductCategory category, int quantity)
-        {
-            Id = nextId;
-            nextId++;
-            ProductName = name;
-            Quantity = quantity;
-            Category = category;
-        }
-        public Product(string name, int quantity, decimal price)
-        {
-            Id = nextId;
-            nextId++;
-            ProductName = name;
-            Quantity = quantity;
-            Price = price;
-        }
-
         public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit)
         {
             ProductName = name;
@@ -74,7 +80,6 @@ namespace BaseBackend.Entities
         #endregion
 
         #region Method
-       
 
         // متد برای به‌روزرسانی موجودی کالا
         public void UpdateQuantity(int newQuantity)
