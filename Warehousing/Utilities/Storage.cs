@@ -13,10 +13,10 @@ namespace Warehousing.Utilities
         public static List<Warehouse> warehouses = new List<Warehouse>() { centralWarehouse, wasteWarehouse };
 
         public static ProductCategory Electronics = new ProductCategory("الکترونیکی");
-        public static ProductCategory Grocery = new ProductCategory("مواد غذایی");
+        public static ProductCategory Grocery = new ProductCategory("موادغذایی");
         public static ProductCategory Clothing = new ProductCategory("پوشاک");
         public static ProductCategory Furniture = new ProductCategory("لوازم منزل");
-        public static List<ProductCategory> categories = new List<ProductCategory>() { Electronics, Grocery, Clothing, Furniture };
+       // public static List<ProductCategory> categories = new List<ProductCategory>() { Electronics, Grocery, Clothing, Furniture };
 
         public static MeasurementUnit Kilogeram = new MeasurementUnit("کیلوگرم");
         public static MeasurementUnit Pieces = new MeasurementUnit("عدد");
@@ -25,7 +25,7 @@ namespace Warehousing.Utilities
         public static MeasurementUnit Set = new MeasurementUnit("دست");
         public static MeasurementUnit Pair = new MeasurementUnit("جفت");
         public static MeasurementUnit Box = new MeasurementUnit("جعبه");
-        public static List<MeasurementUnit> units = new List<MeasurementUnit>() { Kilogeram, Pieces, Litre, Metr ,Set,Pair,Box};
+       // public static List<MeasurementUnit> units = new List<MeasurementUnit>() { Kilogeram, Pieces, Litre, Metr ,Set,Pair,Box};
 
         public static Product Mobile1 = new Product(name: "آیفون13", category: Electronics, quantity: 120, unit: Pieces, price: 320000000);
         public static Product Mobile2 = new Product(name: "سامسونگ s23", category: Electronics, quantity: 200, unit: Pieces, price: 450000000);
@@ -48,17 +48,14 @@ namespace Warehousing.Utilities
         public static Address address8 = new Address(name: AddressTitle.OTHER, province: "آذربایجان شرقی", city: "تبریز", street: "ولیعصر", number: "78");
         public static List<Address> Adresses = new List<Address>() { address1, address2, address3, address4, address5, address6, address7, address8 };
 
-        public static SystemUser Admin = new SystemUser(role: UserRole.ADMIN, firstName: "میترا", lastName: "عباسی", nationalCode: "5310111107", phoneNumber: "09123456789", address: address1);
-        public static SystemUser User = new SystemUser(role: UserRole.USER, firstName: "الهام", lastName: "ملکی", nationalCode: "7078184262", phoneNumber: "09987654321", address: address2);
-        public static Customer customer1 = new Customer(role: UserRole.CUSTOMER, firstName: "علی", lastName: "علوی", nationalCode: "4320101014", phoneNumber: "09123456789", address: address3);
-        public static Customer customer2 = new Customer(role: UserRole.CUSTOMER, firstName: "reza", lastName: "rezaee", nationalCode: "0295255684", phoneNumber: "09187664321", address: address4,otherAddress:address2);
-        public static Customer customer3 = new Customer(role: UserRole.CUSTOMER, firstName: "محمد", lastName: "محمدی", nationalCode: "1678997242", phoneNumber: "09144542525", address: address7,otherAddress:address8);
-        public static Supplier supplier1 = new Supplier(role: UserRole.SUPPLIER, companyName: "کاله", firstName: "احمد", lastName: "احمدی", nationalCode: "1971614866", phoneNumber: "09363636363", address: address5);
-        public static Supplier supplier2 = new Supplier(role: UserRole.SUPPLIER, companyName: "LG", firstName: "طاها", lastName: "مرادی", nationalCode: "0937955027", phoneNumber: "09854565352", address: address6);
-        public static List<Person> Persons = new List<Person>() { Admin, User, customer1, customer2, supplier1, supplier2 };
-        public static List<Customer> Customers = new List<Customer>() { customer1, customer2,customer3 };
-        public static List<Supplier> Suppliers = new List<Supplier>() { supplier1, supplier2 };
-        public static List<SystemUser> SystemUsers = new List<SystemUser>() { Admin, User };
+        public static Person Admin = new SystemUser(role: UserRole.ADMIN, firstName: "میترا", lastName: "عباسی", nationalCode: "5310111107", phoneNumber: "09123456789", address: address1);
+        public static Person User = new SystemUser(role: UserRole.USER, firstName: "الهام", lastName: "ملکی", nationalCode: "7078184262", phoneNumber: "09987654321", address: address2);
+        public static Person customer1 = new Customer(role: UserRole.CUSTOMER, firstName: "علی", lastName: "علوی", nationalCode: "4320101014", phoneNumber: "09123456789", address: address3);
+        public static Person customer2 = new Customer(role: UserRole.CUSTOMER, firstName: "رضا", lastName: "رضایی", nationalCode: "0295255684", phoneNumber: "09187664321", address: address4,otherAddress:address2);
+        public static Person customer3 = new Customer(role: UserRole.CUSTOMER, firstName: "محمد", lastName: "محمدی", nationalCode: "1678997242", phoneNumber: "09144542525", address: address7,otherAddress:address8);
+        public static Person supplier1 = new Supplier(role: UserRole.SUPPLIER, companyName: "کاله", firstName: "احمد", lastName: "احمدی", nationalCode: "1971614866", phoneNumber: "09363636363", address: address5);
+        public static Person supplier2 = new Supplier(role: UserRole.SUPPLIER, companyName: "LG", firstName: "طاها", lastName: "مرادی", nationalCode: "0937955027", phoneNumber: "09854565352", address: address6);
+        public static List<Person> People = new List<Person>() { Admin, User, customer1, customer2, customer3, supplier1, supplier2 };
     }
 }
 

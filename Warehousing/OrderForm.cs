@@ -1,9 +1,11 @@
 ﻿using BaseBackend.Entities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -18,6 +20,8 @@ namespace Warehousing
         OrderItem orderItem;
         OrderItem selectedItem;
         List<OrderItem> orderItems;
+        List<MeasurementUnit> units;
+        List<ProductCategory> categories;
         DataGridViewRow selectedRow;
         Product selectedProduct;
         MeasurementUnit selectedunit;
@@ -28,23 +32,37 @@ namespace Warehousing
         public OrderForm()
         {
             InitializeComponent();
+            string jsonDataUnitFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Data", "unitsFile.json");
+            if (File.Exists(jsonDataUnitFilePath))
+            {
+                string jsonDataStrUnit = File.ReadAllText(jsonDataUnitFilePath);
+                units = JsonConvert.DeserializeObject<List<MeasurementUnit>>(jsonDataStrUnit);
+            }
+
+            string jsonDataCategoryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "categoriesFile.json");
+            if (File.Exists(jsonDataCategoryFilePath))
+            {
+                string jsonDataStrCategory = File.ReadAllText(jsonDataCategoryFilePath);
+                categories = JsonConvert.DeserializeObject<List<ProductCategory>>(jsonDataStrCategory);
+            }
             orderManager = new OrderManager();
             orderItems = new List<OrderItem>();
         }
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
+            
             lblDate.Text = DateTime.Now.ToShortDateString();
-    
+
             // متصل کردن رویدادها به DataGridView
             orderDataGridView.CellValueChanged += orderDataGridView_CellClick;
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             cmbProductName.SelectedIndexChanged += cmbProductName_SelectedIndexChanged;
             cmbCustomer.SelectedIndexChanged += cmbCustomer_SelectedIndexChanged;
-            cmbCustomer.DataSource = Storage.Customers;       //نمایش نام مشتری
+            cmbCustomer.DataSource = Storage.People.OfType<Customer>().ToList();      //نمایش نام مشتری
             cmbCustomer.DisplayMember = "FullName";
             cmbCustomer.ValueMember = "Id";
-            cmbCategory.DataSource = Storage.categories;      //نمایش گروه محصولات
+            cmbCategory.DataSource = categories;      //نمایش گروه محصولات
             cmbCategory.DisplayMember = "CategoryName";
             cmbCategory.ValueMember = "Id";
             nudQuantity.Value = 0;
@@ -200,7 +218,8 @@ namespace Warehousing
             if (selectedProduct != null)
             {
                 // فیلتر کردن واحد محصول مرتبط با محصول انتخاب شده
-                var filteredUnites = Storage.units.Where(u => u.Name == selectedProduct.UnitName).ToList();
+               var filteredUnites =units.Where(u => u.Name == selectedProduct.UnitName).ToList();
+                // var filteredUnites = Storage.units.Where(u => u.Name == selectedProduct.UnitName).ToList();
 
                 // نمایش واحدهای مرتبط با محصول در combobox
                 cmbUnit.DataSource = filteredUnites;

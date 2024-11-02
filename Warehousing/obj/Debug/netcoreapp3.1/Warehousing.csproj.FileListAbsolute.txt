@@ -83,10 +83,13 @@ C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.ProductForm.resources
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.Properties.Resources.resources
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.csproj.GenerateResource.cache
-C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.csproj.CoreCompileInputs.cache
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.AssemblyInfoInputs.cache
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.AssemblyInfo.cs
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.csproj.CopyComplete
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.dll
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.pdb
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.genruntimeconfig.cache
+C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.csproj.CoreCompileInputs.cache
+C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\netcoreapp3.1\Data\categoriesFile.json
+C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\netcoreapp3.1\Data\unitsFile.json

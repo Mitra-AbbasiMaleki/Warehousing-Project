@@ -1,6 +1,8 @@
 ﻿using BaseBackend.Entities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Warehousing.DTOs;
@@ -10,15 +12,30 @@ namespace Warehousing
 {
     public partial class ProductForm : Form
     {
+        List<MeasurementUnit> units;
+        List<ProductCategory> categories;
         public ProductForm()
         {
             InitializeComponent();
+            string jsonDataUnitFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "unitsFile.json");
+            if (File.Exists(jsonDataUnitFilePath))
+            {
+                string jsonDataStrUnit = File.ReadAllText(jsonDataUnitFilePath);
+                units = JsonConvert.DeserializeObject<List<MeasurementUnit>>(jsonDataStrUnit);
+            }
+
+            string jsonDataCategoryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "categoriesFile.json");
+            if (File.Exists(jsonDataCategoryFilePath))
+            {
+                string jsonDataStrCategory = File.ReadAllText(jsonDataCategoryFilePath);
+                categories = JsonConvert.DeserializeObject<List<ProductCategory>>(jsonDataStrCategory);
+            }
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            cmbUnit.DataSource = Storage.units;
-            cmbProductGroup.DataSource = Storage.categories;
+            cmbUnit.DataSource = units;
+            cmbProductGroup.DataSource = categories;
             RefreshDataGridView();
         }
 

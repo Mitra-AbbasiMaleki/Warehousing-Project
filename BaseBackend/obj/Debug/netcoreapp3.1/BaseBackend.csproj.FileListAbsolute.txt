@@ -36,8 +36,8 @@ C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\bin\Debug\
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\bin\Debug\netcoreapp3.1\BaseBackend.dll
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\bin\Debug\netcoreapp3.1\BaseBackend.pdb
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.csprojAssemblyReference.cache
-C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.csproj.CoreCompileInputs.cache
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.AssemblyInfoInputs.cache
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.AssemblyInfo.cs
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.dll
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.pdb
+C:\Users\HojjatShariffam\source\repos\Warehousing-Project\BaseBackend\obj\Debug\netcoreapp3.1\BaseBackend.csproj.CoreCompileInputs.cache

@@ -12,8 +12,7 @@ namespace BaseBackend.Entities
         public string Name { get; set; }
         public MeasurementUnit(string name)
         {
-            Id = nextid;
-            nextid++;
+            Id = nextid++;
             Name = name;
         }
     }

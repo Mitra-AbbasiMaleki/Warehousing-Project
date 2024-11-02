@@ -7,6 +7,7 @@ using BaseBackend.Entities;
 using Warehousing.DTOs;
 using BaseBackend.Enums;
 using System.Drawing;
+using System.Linq;
 
 namespace Warehousing
 {
@@ -23,7 +24,7 @@ namespace Warehousing
                 return;
 
             //Add Person
-            UserRole RoleSelected = (UserRole)cmbUserRole.SelectedItem;
+            UserRole RoleSelected = (UserRole)cmbUserRole.SelectedIndex;
             Address address = new Address()
             { Province = txtProvince.Text,
                 City = txtCity.Text,
@@ -60,21 +61,21 @@ namespace Warehousing
             {
                 case 1:
                 case 2:
-                    SystemUser systemUser = new SystemUser(role:addPerson.Role,firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
-                    Storage.Persons.Add(systemUser);
-                    RefreshDataGridView(Storage.Persons);
+                    Person systemUser = new SystemUser(role:addPerson.Role,firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
+                    Storage.People.Add(systemUser);
+                    RefreshDataGridView(Storage.People.OfType<SystemUser>().ToList());
                     break;
                 case 3:
-                    Customer customer = new Customer(role: addPerson.Role, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
-                    Storage.Customers.Add(customer);
-                    Storage.Persons.Add(customer);
-                    RefreshDataGridView(Storage.Customers);
+                    Person customer = new Customer(role: addPerson.Role, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
+                    Storage.People.Add(customer);
+                    Storage.People.Add(customer);
+                    RefreshDataGridView(Storage.People.OfType<Customer>().ToList());
                     break;
                 case 4:
-                    Supplier supplier=new Supplier(role: addPerson.Role, companyName:addPerson.CompanyName, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
-                    Storage.Suppliers.Add(supplier);
-                    Storage.Persons.Add(supplier);
-                    RefreshDataGridView(Storage.Suppliers);
+                    Person supplier=new Supplier(role: addPerson.Role, companyName:addPerson.CompanyName, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
+                    Storage.People.Add(supplier);
+                    Storage.People.Add(supplier);
+                    RefreshDataGridView(Storage.People.OfType<Supplier>().ToList());
                     break;
                 default:
                     MessageBox.Show("لطفاعنوان راانتخاب کنید.");
@@ -128,34 +129,35 @@ namespace Warehousing
 
         private void PersonForm_Load(object sender, EventArgs e)
         {
-            RefreshDataGridView(Storage.Persons);
+            RefreshDataGridView(Storage.People);
             cmbUserRole.DataSource = Enum.GetValues(typeof(UserRole));
         }
 
         private void cmbUserRole_SelectedIndexChanged(object sender, EventArgs e)
         {
+            List<Person> newList = new List<Person>();
             switch (cmbUserRole.SelectedIndex)
             {
                 case 1:
-                case 2:
-                    RefreshDataGridView(Storage.Persons); 
+                case 2: 
+                    RefreshDataGridView(Storage.People); 
                     break;
                 case 3:
-                    RefreshDataGridView(Storage.Customers);
+                    RefreshDataGridView(Storage.People);
                     break;
                 case 4:
                     txtCompanyName.Enabled = true;
-                    RefreshDataGridView(Storage.Suppliers);
+                    RefreshDataGridView(Storage.People);
                     break;
                 default:
-                    RefreshDataGridView(Storage.Persons);
+                    RefreshDataGridView(Storage.People);
                     return;
             }
         }
         private void RefreshDataGridView<T>(List<T> list)
         {
             personDataGridView.DataSource = null;
-            personDataGridView.DataSource =Storage.Persons;
+            personDataGridView.DataSource =list;
         }
     }
 }
