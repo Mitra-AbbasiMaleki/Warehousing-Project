@@ -14,5 +14,7 @@ namespace Warehousing.DTOs
         public string Description { get; set; }
         public Warehouse Warehouse { get; set; }
         public MeasurementUnit Unit { get; set; }
+        public ProductStatus Status { get; set; }
+        public Supplier Supplier { get; set; }
     }
 }

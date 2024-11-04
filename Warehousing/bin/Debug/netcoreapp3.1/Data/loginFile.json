@@ -1,0 +1,22 @@
+﻿[
+  {
+    "UserName": "Admin",
+    "Password": "Admin",
+    "UserRole": "ADMIN"
+  },
+  {
+    "UserName": "User",
+    "Password": "User",
+    "UserRole": "USER"
+  },
+  {
+    "UserName": "Costumer",
+    "Password": "Costumer",
+    "UserRole": "CUSTOMER"
+  },
+  {
+    "UserName": "Supplier",
+    "Password": "Supplier",
+    "UserRole": "SUPPLIER"
+  }
+]

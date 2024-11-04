@@ -3,10 +3,12 @@ using BaseBackend.Entities.Interfaces;
 using BaseBackend.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace BaseBackend.Entities
 {
+    [DebuggerDisplay("Person {FullName} - {Role}")]
     public class Person: IBaseEntity
     {
         private static int nextId = 1; //متغیر static برای تولید Id بعدی
@@ -43,8 +45,7 @@ namespace BaseBackend.Entities
         // سازنده کلاس
         public Person()
         {
-            Id = nextId;
-            nextId++;
+            Id = nextId++;
             Addresses = new List<Address>();
         }
         // سازنده کلاس
@@ -64,9 +65,8 @@ namespace BaseBackend.Entities
                 AddAddress(otherAddress);    
         }
 
-        public void UpdateContactInfo(string newPhoneNumber, string newEmail, Address newAddress)
+        public void UpdateContactInfo(string newPhoneNumber, Address newAddress)
         {
-            //UpdatedByUserId = this.Id;
             PhoneNumber = newPhoneNumber;
             Addresses.Add(newAddress);
         }
@@ -74,8 +74,6 @@ namespace BaseBackend.Entities
         {
             Addresses.Add(newAddress);
         }
-
     }
-    
 }
 

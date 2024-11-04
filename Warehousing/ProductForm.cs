@@ -1,4 +1,5 @@
 ﻿using BaseBackend.Entities;
+using BaseBackend.Enums;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Warehousing
     {
         List<MeasurementUnit> units;
         List<ProductCategory> categories;
+        ProductStatus statusSelected;
+        
         public ProductForm()
         {
             InitializeComponent();
@@ -34,9 +37,19 @@ namespace Warehousing
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
+            rdoAvailable.Text = ProductStatus.Available.GetDescription();
+            rdoUnavailable.Text = ProductStatus.Unavailable.GetDescription();
+            rdoBackOrdered.Text = ProductStatus.BackOrdered.GetDescription();
+            rdoAvailable.CheckedChanged += radioButton_CheckedChanged;
+            rdoUnavailable.CheckedChanged += radioButton_CheckedChanged;
+            rdoBackOrdered.CheckedChanged += radioButton_CheckedChanged;
             cmbUnit.DataSource = units;
             cmbProductGroup.DataSource = categories;
+            cmbSupplier.DataSource = Storage.People.OfType<Supplier>().ToList();
+            cmbSupplier.DisplayMember = "FullName";
+            cmbSupplier.ValueMember = "Id";
             RefreshDataGridView();
+
         }
 
         private void btnProductRegistration_Click(object sender, EventArgs e)
@@ -48,21 +61,22 @@ namespace Warehousing
             ProductCategory categorySelected =(ProductCategory)cmbProductGroup.SelectedItem;
             MeasurementUnit unitSelected = (MeasurementUnit)cmbUnit.SelectedItem;
             DateTime expirationDate = mtxExpiryDate.Text.ToExpirationDate();
-            Warehouse warehouselected;
+            Warehouse warehouseSelected;
+            Supplier supplierSelected=(Supplier)cmbSupplier.SelectedItem;
             if (chkCentralWarehouse.Checked)
             {
-                warehouselected = Storage.centralWarehouse;  // اختصاص انبار مرکزی
+                warehouseSelected = Storage.centralWarehouse;  // اختصاص انبار مرکزی
             }
             else if (chkOtherWarehouse.Checked)
             {
-                warehouselected = Storage.wasteWarehouse;  // اختصاص انبار دیگر
+                warehouseSelected = Storage.wasteWarehouse;  // اختصاص انبار دیگر
             }
             else
             {
                 MessageBox.Show("لطفاً یک انبار انتخاب کنید.");
                 return;
             }
- 
+
             //DTO
             AddProduct addProduct = new AddProduct()
             {
@@ -71,9 +85,11 @@ namespace Warehousing
                 Quantity = Convert.ToInt32(mtxFirstQuantity.Text),
                 Price = Convert.ToDecimal(txtPrice.Text),
                 ExpiryDate = expirationDate,
-                Warehouse = warehouselected,
+                Warehouse = warehouseSelected,
                 Unit = unitSelected,
-                Description = txtDescription.Text
+                Description = txtDescription.Text,
+                Status = statusSelected,
+                Supplier=supplierSelected                
             };
             //Add Product
             AddProduct(addProduct);
@@ -84,8 +100,8 @@ namespace Warehousing
         }
         public void AddProduct(AddProduct addProduct)
         {
-            //creat object
-            Product product = new Product(name:addProduct.ProductName,category:addProduct.Category,quantity:addProduct.Quantity,unit:addProduct.Unit,price:addProduct.Price,warehouse:addProduct.Warehouse,expiryDate:addProduct.ExpiryDate,description:addProduct.Description);
+            //Creat Object
+            Product product = new Product(name:addProduct.ProductName,category:addProduct.Category,quantity:addProduct.Quantity,status:addProduct.Status,unit:addProduct.Unit,price:addProduct.Price,supplier:addProduct.Supplier,warehouse:addProduct.Warehouse,expiryDate:addProduct.ExpiryDate,description:addProduct.Description);
             Storage.products.Add(product);
             RefreshDataGridView();
         }
@@ -110,7 +126,7 @@ namespace Warehousing
             cmbUnit.Text = string.Empty;
             txtPrice.Text = string.Empty;
             mtxExpiryDate.Text = string.Empty;
-            txtSupplier.Text = string.Empty;
+            cmbSupplier.SelectedIndex = 0;
             txtDescription.Text = string.Empty;
         }
         private void RefreshDataGridView()
@@ -119,7 +135,40 @@ namespace Warehousing
             productDataGridView.DataSource = Storage.products;
             productDataGridView.Columns["Category"].Visible = false;
             productDataGridView.Columns["Unit"].Visible = false;
-            productDataGridView.Columns["Warehouse"].Visible = false;
+            productDataGridView.Columns["Supplier"].Visible = false;
+            productDataGridView.Columns["Warehouse"].Visible = false; 
+        }
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton radioButton && radioButton.Checked)
+            {
+                // با توجه به نام رادیو باتن، مقدار enum را مشخص کنید
+                switch (radioButton.Name)
+                {
+                    case "rdoAvailable":
+                        statusSelected = ProductStatus.Available;
+                        break;
+                    case "rdoUnavailable":
+                        statusSelected = ProductStatus.Unavailable;
+                        break;
+                    case "rdoBackOrdered":
+                        statusSelected = ProductStatus.BackOrdered;
+                        break;
+                    default:
+                        return; // اگر هیچ کدام نبود، خارج می‌شود
+                }
+            }
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtPrice.Text, out decimal price))
+            {
+                // فرمت کردن قیمت به فرمت پولی
+                txtPrice.Text = price.ToString("N0"); // "C" برای فرمت پولی
+                                                      // موقعیت کرسر را به انتهای TextBox برمی‌گردانیم
+                txtPrice.SelectionStart = txtPrice.Text.Length;
+            }
         }
     }
 }

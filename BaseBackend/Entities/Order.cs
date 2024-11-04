@@ -9,7 +9,7 @@ namespace BaseBackend.Entities
 {
     public class Order:IBaseEntity
     {
-        private static int nextId = 1;                      // برای تولید Id
+        private readonly int nextId = 1;                      // برای تولید Id
         public int Id { get; set; }                         //  شناسه سفارش
         public OrderStatus Status { get; set; }             // وضعیت سفارش
         public DateTime OrderDate { get; set; }             //تاریخ ثبت سفارش
@@ -26,8 +26,7 @@ namespace BaseBackend.Entities
         // سازنده
         public Order()
         {
-            Id = nextId;
-            nextId++;
+            Id = nextId++;
             OrderDate = DateTime.Now;
         }
         public Order(Customer customerName, List<OrderItem> orderItems):this()

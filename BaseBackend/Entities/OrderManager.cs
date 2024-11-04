@@ -7,14 +7,13 @@ namespace BaseBackend.Entities
 {
     public class OrderManager : IBaseEntity,IOrder
     {
-        int nextid = 0;
+        private readonly int nextId = 1;
         public int Id { get; set; }
         public Customer Customer { get; set; }     // نام مشتری 
         public List<OrderItem> OrderItems { get; set ; }   //لیست محصولات موجود در سفارش
         public OrderManager()
         {
-            Id = nextid;
-            nextid++;
+            Id = nextId++;
             OrderItems = new List<OrderItem>();
         }
         //ایجاد سفارش جدید

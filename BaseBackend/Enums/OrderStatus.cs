@@ -1,10 +1,19 @@
-﻿namespace BaseBackend.Enums
+﻿using System.ComponentModel;
+
+namespace BaseBackend.Enums
 {
     public enum OrderStatus
     {
-        PendingPayment,    // در انتظار پرداخت
-        Confirmed,         // تأیید شده
-        Shipped,           // ارسال شده
-        Delivered          // تحویل داده شده
+        [Description("در انتظار پرداخت")]
+        PendingPayment,
+
+        [Description("تأیید شده")]
+        Confirmed,
+
+        [Description("ارسال شده")]
+        Shipped,  
+        
+        [Description("تحویل داده شده")]
+        Delivered           
     }
 }

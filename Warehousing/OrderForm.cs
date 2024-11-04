@@ -94,7 +94,7 @@ namespace Warehousing
                 MessageBox.Show("محصول مورد نظر  قبلا اضافه شده");
                 return;
             }
-            else if (selectedProduct.IsInStock(quantity))
+            else if (selectedProduct.IsAvailable(quantity))
             {
                 //ارسال برای اضافه کردن محصول
                 AddOrderItem(addOrderItem);

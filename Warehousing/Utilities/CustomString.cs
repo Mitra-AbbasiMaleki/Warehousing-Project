@@ -69,5 +69,6 @@ namespace Warehousing.Utilities
         {
             return address.Province + "-" + address.City + "-" + address.Street + "-" + address.Number;
         }
+        
     }
 }

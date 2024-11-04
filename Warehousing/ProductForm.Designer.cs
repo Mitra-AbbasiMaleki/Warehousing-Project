@@ -34,19 +34,24 @@ namespace Warehousing
         private void InitializeComponent()
         {
             this.grpNewPruduct = new System.Windows.Forms.GroupBox();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.flpProductStatus = new System.Windows.Forms.FlowLayoutPanel();
+            this.rdoAvailable = new System.Windows.Forms.RadioButton();
+            this.rdoUnavailable = new System.Windows.Forms.RadioButton();
+            this.rdoBackOrdered = new System.Windows.Forms.RadioButton();
+            this.btnProductRegistration = new System.Windows.Forms.Button();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblProductStatus = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.chkOtherWarehouse = new System.Windows.Forms.CheckBox();
             this.chkCentralWarehouse = new System.Windows.Forms.CheckBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.cmbProductGroup = new System.Windows.Forms.ComboBox();
             this.lblProductGroup = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.mtxExpiryDate = new System.Windows.Forms.MaskedTextBox();
             this.lblExpiryDate = new System.Windows.Forms.Label();
-            this.btnProductRegistration = new System.Windows.Forms.Button();
-            this.txtSupplier = new System.Windows.Forms.TextBox();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.lblWarehous = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -58,25 +63,28 @@ namespace Warehousing
             this.label1 = new System.Windows.Forms.Label();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
             this.grpNewPruduct.SuspendLayout();
+            this.flpProductStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // grpNewPruduct
             // 
             this.grpNewPruduct.AutoSize = true;
+            this.grpNewPruduct.Controls.Add(this.cmbSupplier);
+            this.grpNewPruduct.Controls.Add(this.flpProductStatus);
+            this.grpNewPruduct.Controls.Add(this.btnProductRegistration);
+            this.grpNewPruduct.Controls.Add(this.lblDescription);
+            this.grpNewPruduct.Controls.Add(this.txtDescription);
+            this.grpNewPruduct.Controls.Add(this.lblProductStatus);
             this.grpNewPruduct.Controls.Add(this.txtProductName);
             this.grpNewPruduct.Controls.Add(this.chkOtherWarehouse);
             this.grpNewPruduct.Controls.Add(this.chkCentralWarehouse);
-            this.grpNewPruduct.Controls.Add(this.txtDescription);
-            this.grpNewPruduct.Controls.Add(this.lblDescription);
             this.grpNewPruduct.Controls.Add(this.cmbProductGroup);
             this.grpNewPruduct.Controls.Add(this.lblProductGroup);
             this.grpNewPruduct.Controls.Add(this.txtPrice);
             this.grpNewPruduct.Controls.Add(this.lblPrice);
             this.grpNewPruduct.Controls.Add(this.mtxExpiryDate);
             this.grpNewPruduct.Controls.Add(this.lblExpiryDate);
-            this.grpNewPruduct.Controls.Add(this.btnProductRegistration);
-            this.grpNewPruduct.Controls.Add(this.txtSupplier);
             this.grpNewPruduct.Controls.Add(this.lblSupplier);
             this.grpNewPruduct.Controls.Add(this.lblWarehous);
             this.grpNewPruduct.Controls.Add(this.lblQuantity);
@@ -93,6 +101,97 @@ namespace Warehousing
             this.grpNewPruduct.TabIndex = 0;
             this.grpNewPruduct.TabStop = false;
             this.grpNewPruduct.Text = "مشخصات کالا";
+            // 
+            // cmbSupplier
+            // 
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(641, 254);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(233, 26);
+            this.cmbSupplier.TabIndex = 24;
+            // 
+            // flpProductStatus
+            // 
+            this.flpProductStatus.AutoSize = true;
+            this.flpProductStatus.Controls.Add(this.rdoAvailable);
+            this.flpProductStatus.Controls.Add(this.rdoUnavailable);
+            this.flpProductStatus.Controls.Add(this.rdoBackOrdered);
+            this.flpProductStatus.Location = new System.Drawing.Point(36, 252);
+            this.flpProductStatus.Name = "flpProductStatus";
+            this.flpProductStatus.Size = new System.Drawing.Size(448, 29);
+            this.flpProductStatus.TabIndex = 23;
+            // 
+            // rdoAvailable
+            // 
+            this.rdoAvailable.AutoSize = true;
+            this.rdoAvailable.Location = new System.Drawing.Point(295, 3);
+            this.rdoAvailable.Name = "rdoAvailable";
+            this.rdoAvailable.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.rdoAvailable.Size = new System.Drawing.Size(150, 22);
+            this.rdoAvailable.TabIndex = 10;
+            this.rdoAvailable.TabStop = true;
+            this.rdoAvailable.Text = "radioButton";
+            this.rdoAvailable.UseVisualStyleBackColor = true;
+            // 
+            // rdoUnavailable
+            // 
+            this.rdoUnavailable.AutoSize = true;
+            this.rdoUnavailable.Location = new System.Drawing.Point(131, 3);
+            this.rdoUnavailable.Name = "rdoUnavailable";
+            this.rdoUnavailable.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.rdoUnavailable.Size = new System.Drawing.Size(158, 22);
+            this.rdoUnavailable.TabIndex = 11;
+            this.rdoUnavailable.TabStop = true;
+            this.rdoUnavailable.Text = "radioButton1";
+            this.rdoUnavailable.UseVisualStyleBackColor = true;
+            // 
+            // rdoBackOrdered
+            // 
+            this.rdoBackOrdered.AutoSize = true;
+            this.rdoBackOrdered.Location = new System.Drawing.Point(17, 3);
+            this.rdoBackOrdered.Name = "rdoBackOrdered";
+            this.rdoBackOrdered.Size = new System.Drawing.Size(108, 22);
+            this.rdoBackOrdered.TabIndex = 12;
+            this.rdoBackOrdered.TabStop = true;
+            this.rdoBackOrdered.Text = "radioButton2";
+            this.rdoBackOrdered.UseVisualStyleBackColor = true;
+            // 
+            // btnProductRegistration
+            // 
+            this.btnProductRegistration.Location = new System.Drawing.Point(36, 305);
+            this.btnProductRegistration.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductRegistration.Name = "btnProductRegistration";
+            this.btnProductRegistration.Size = new System.Drawing.Size(380, 48);
+            this.btnProductRegistration.TabIndex = 14;
+            this.btnProductRegistration.Text = "ثبت کالا";
+            this.btnProductRegistration.UseVisualStyleBackColor = true;
+            this.btnProductRegistration.Click += new System.EventHandler(this.btnProductRegistration_Click);
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(882, 320);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(72, 18);
+            this.lblDescription.TabIndex = 0;
+            this.lblDescription.Text = "توضیحات :";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(512, 317);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(363, 26);
+            this.txtDescription.TabIndex = 13;
+            // 
+            // lblProductStatus
+            // 
+            this.lblProductStatus.AutoSize = true;
+            this.lblProductStatus.Location = new System.Drawing.Point(511, 258);
+            this.lblProductStatus.Name = "lblProductStatus";
+            this.lblProductStatus.Size = new System.Drawing.Size(87, 18);
+            this.lblProductStatus.TabIndex = 0;
+            this.lblProductStatus.Text = "وضعیت کالا :";
             // 
             // txtProductName
             // 
@@ -123,23 +222,6 @@ namespace Warehousing
             this.chkCentralWarehouse.Text = "انبار مرکزی";
             this.chkCentralWarehouse.UseVisualStyleBackColor = true;
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(118, 255);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(285, 26);
-            this.txtDescription.TabIndex = 10;
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(423, 258);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(72, 18);
-            this.lblDescription.TabIndex = 0;
-            this.lblDescription.Text = "توضیحات :";
-            // 
             // cmbProductGroup
             // 
             this.cmbProductGroup.DisplayMember = "CategoryName";
@@ -165,6 +247,7 @@ namespace Warehousing
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(180, 26);
             this.txtPrice.TabIndex = 5;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // lblPrice
             // 
@@ -191,24 +274,6 @@ namespace Warehousing
             this.lblExpiryDate.Size = new System.Drawing.Size(84, 18);
             this.lblExpiryDate.TabIndex = 0;
             this.lblExpiryDate.Text = "تاریخ انقضا :";
-            // 
-            // btnProductRegistration
-            // 
-            this.btnProductRegistration.Location = new System.Drawing.Point(36, 305);
-            this.btnProductRegistration.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProductRegistration.Name = "btnProductRegistration";
-            this.btnProductRegistration.Size = new System.Drawing.Size(380, 48);
-            this.btnProductRegistration.TabIndex = 11;
-            this.btnProductRegistration.Text = "ثبت کالا";
-            this.btnProductRegistration.UseVisualStyleBackColor = true;
-            this.btnProductRegistration.Click += new System.EventHandler(this.btnProductRegistration_Click);
-            // 
-            // txtSupplier
-            // 
-            this.txtSupplier.Location = new System.Drawing.Point(664, 255);
-            this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(211, 26);
-            this.txtSupplier.TabIndex = 9;
             // 
             // lblSupplier
             // 
@@ -313,6 +378,8 @@ namespace Warehousing
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.grpNewPruduct.ResumeLayout(false);
             this.grpNewPruduct.PerformLayout();
+            this.flpProductStatus.ResumeLayout(false);
+            this.flpProductStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -334,7 +401,6 @@ namespace Warehousing
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.MaskedTextBox mtxExpiryDate;
         private System.Windows.Forms.Label lblExpiryDate;
-        private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox txtDescription;
@@ -345,5 +411,11 @@ namespace Warehousing
         private System.Windows.Forms.MaskedTextBox mtxFirstQuantity;
         private System.Windows.Forms.DataGridView productDataGridView;
         private System.Windows.Forms.CheckBox chkOtherWarehouse;
+        private Label lblProductStatus;
+        private FlowLayoutPanel flpProductStatus;
+        private RadioButton rdoAvailable;
+        private RadioButton rdoBackOrdered;
+        private RadioButton rdoUnavailable;
+        private ComboBox cmbSupplier;
     }
 }

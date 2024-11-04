@@ -8,11 +8,14 @@ using Warehousing.DTOs;
 using BaseBackend.Enums;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace Warehousing
 {
     public partial class PersonForm : Form
     {
+        AddressTitle selectedTitle;
         public PersonForm()
         {
             InitializeComponent();
@@ -26,7 +29,9 @@ namespace Warehousing
             //Add Person
             UserRole RoleSelected = (UserRole)cmbUserRole.SelectedIndex;
             Address address = new Address()
-            { Province = txtProvince.Text,
+            {
+                Title = selectedTitle,
+                Province = txtProvince.Text,
                 City = txtCity.Text,
                 Street = txtStreet.Text,
                 Number = txtNumber.Text
@@ -38,7 +43,7 @@ namespace Warehousing
                 LastName = txtLastName.Text.CleanName(),
                 NationalCode = txtNationalCode.Text,
                 PhoneNumber = txtPhoneNumber.Text.CleanPhoneNumber(),
-                Address = address, 
+                Address = address,
                 CompanyName = txtCompanyName.Text,
             };
             if (cmbUserRole.SelectedIndex == 0)
@@ -61,7 +66,7 @@ namespace Warehousing
             {
                 case 1:
                 case 2:
-                    Person systemUser = new SystemUser(role:addPerson.Role,firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
+                    Person systemUser = new SystemUser(role: addPerson.Role, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
                     Storage.People.Add(systemUser);
                     RefreshDataGridView(Storage.People.OfType<SystemUser>().ToList());
                     break;
@@ -72,7 +77,7 @@ namespace Warehousing
                     RefreshDataGridView(Storage.People.OfType<Customer>().ToList());
                     break;
                 case 4:
-                    Person supplier=new Supplier(role: addPerson.Role, companyName:addPerson.CompanyName, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
+                    Person supplier = new Supplier(role: addPerson.Role, companyName: addPerson.CompanyName, firstName: addPerson.FirstName, lastName: addPerson.LastName, nationalCode: addPerson.NationalCode, phoneNumber: addPerson.PhoneNumber, address: addPerson.Address);
                     Storage.People.Add(supplier);
                     Storage.People.Add(supplier);
                     RefreshDataGridView(Storage.People.OfType<Supplier>().ToList());
@@ -80,17 +85,17 @@ namespace Warehousing
                 default:
                     MessageBox.Show("لطفاعنوان راانتخاب کنید.");
                     return;
-            } 
+            }
         }
         private bool ISValidateRegistrationForm()
         {
             //Validate FirstName
             if (string.IsNullOrEmpty(txtFirstName.Text) || !CleanData.IsValidName(txtFirstName.Text))
-                {
-                    MessageBox.Show("لطفا نام را درست وارد کنید");
-                    txtNationalCode.Text = string.Empty;
-                    return false;
-                }
+            {
+                MessageBox.Show("لطفا نام را درست وارد کنید");
+                txtNationalCode.Text = string.Empty;
+                return false;
+            }
             //Validate LastName
             if (string.IsNullOrEmpty(txtLastName.Text) || !CleanData.IsValidName(txtLastName.Text))
             {
@@ -106,7 +111,7 @@ namespace Warehousing
                 return false;
             }
             //Validate User Role
-            if (cmbUserRole.SelectedIndex==0)
+            if (cmbUserRole.SelectedIndex == 0)
             {
                 MessageBox.Show("لطفاعنوان راانتخاب کنید");
                 return false;
@@ -130,7 +135,21 @@ namespace Warehousing
         private void PersonForm_Load(object sender, EventArgs e)
         {
             RefreshDataGridView(Storage.People);
-            cmbUserRole.DataSource = Enum.GetValues(typeof(UserRole));
+            foreach (UserRole userRole in Enum.GetValues(typeof(UserRole)))
+            {
+                cmbUserRole.Items.Add(new { Text = userRole.GetDescription(), Value = userRole });
+            }
+            cmbUserRole.DisplayMember = "Text";
+            cmbUserRole.ValueMember = "Value";
+            cmbUserRole.SelectedIndex = 0;
+            //cmbUserRole.DataSource = Enum.GetValues(typeof(UserRole));
+            rdoHome.Text=AddressTitle.HOME.GetDescription();
+            rdoWork.Text = AddressTitle.WORK.GetDescription();
+            rdoOther.Text = AddressTitle.OTHER.GetDescription();
+            rdoHome.CheckedChanged += radioButton_CheckedChanged;
+            rdoWork.CheckedChanged += radioButton_CheckedChanged;
+            rdoOther.CheckedChanged += radioButton_CheckedChanged;
+
         }
 
         private void cmbUserRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,10 +158,12 @@ namespace Warehousing
             switch (cmbUserRole.SelectedIndex)
             {
                 case 1:
-                case 2: 
-                    RefreshDataGridView(Storage.People); 
+                case 2:
+                    txtCompanyName.Enabled = false;
+                    RefreshDataGridView(Storage.People);
                     break;
                 case 3:
+                    txtCompanyName.Enabled = false;
                     RefreshDataGridView(Storage.People);
                     break;
                 case 4:
@@ -150,6 +171,7 @@ namespace Warehousing
                     RefreshDataGridView(Storage.People);
                     break;
                 default:
+                    txtCompanyName.Enabled = false;
                     RefreshDataGridView(Storage.People);
                     return;
             }
@@ -157,7 +179,31 @@ namespace Warehousing
         private void RefreshDataGridView<T>(List<T> list)
         {
             personDataGridView.DataSource = null;
-            personDataGridView.DataSource =list;
+            personDataGridView.DataSource = list;
+            personDataGridView.Refresh();
         }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton radioButton && radioButton.Checked)
+            {
+                // با توجه به نام رادیو باتن، مقدار enum را مشخص کنید
+                switch (radioButton.Name)
+                {
+                    case "rdoHome":
+                        selectedTitle = AddressTitle.HOME;
+                        break;
+                    case "rdoWork":
+                        selectedTitle = AddressTitle.WORK;
+                        break;
+                    case "rdoOther":
+                        selectedTitle = AddressTitle.OTHER;
+                        break;
+                    default:
+                        return; // اگر هیچ کدام نبود، خارج می‌شود
+                }
+            }
+        }
+
     }
 }

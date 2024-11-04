@@ -40,7 +40,7 @@ namespace BaseBackend.Entities
         }
 
         // ویرایش اطلاعات تماس کاربر
-        public new void UpdateContactInfo(string newPhoneNumber, string newEmail, Address newAddress)
+        public new void UpdateContactInfo(string newPhoneNumber, Address newAddress)
         {
             PhoneNumber = newPhoneNumber;
             Addresses.Add(newAddress);

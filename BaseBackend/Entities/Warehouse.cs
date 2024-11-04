@@ -8,7 +8,7 @@ namespace BaseBackend.Entities
     public class Warehouse: IBaseEntity
     {
         // خصوصیات انبار
-        private static int nextId = 1; //متغیر static برای تولید Id بعدی
+        private readonly int nextId = 1;  //متغیر static برای تولید Id بعدی
         public int Id { get; set; }          // شناسه انبار
         public string Name { get; set; }   //نام انبار 
         public string Location { get; set; }          // مکان انبار
@@ -17,8 +17,7 @@ namespace BaseBackend.Entities
         // سازنده
         public Warehouse()
         {
-            Id = nextId;
-            nextId++;
+            Id = nextId++;
         }
         public Warehouse(string name):this()
         {

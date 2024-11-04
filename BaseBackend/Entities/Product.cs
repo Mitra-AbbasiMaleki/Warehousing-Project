@@ -1,15 +1,17 @@
 ﻿#nullable disable
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using BaseBackend.Entities.Interfaces;
 using BaseBackend.Enums;
 
 namespace BaseBackend.Entities
 {
+    [DebuggerDisplay("ProductName:{Name} - CategoryName:{CategoryName} - Quantity:{Quantity} - Price:{Price}.")]
     public class Product : IBaseEntity
     {
         #region property
-        private static int nextId = 1; //متغیر static برای تولید Id بعدی
+        private readonly int nextId = 1;
         public int Id { get; set; }   // شناسه محصول
         public string Name { get; set; }     // نام محصول
         public ProductCategory Category { get; set; } //گروه محصول
@@ -17,13 +19,15 @@ namespace BaseBackend.Entities
         {
             get { return Category != null ? Category.CategoryName : "No Category"; }
         }
-        public int Quantity { get; set; } //تعداد محصول
-        public decimal Price { get; set; }   // قیمت خرید
-        public DateTime ExpiryDate { get; set; }  //تاریخ انقضا
-        public string Description { get; set; }   //توضیحات محصول
-        public Warehouse Warehouse { get; set; }  //ارجاع به انیار
-        public ProductStatus Status { get; set; } // وضعیت محصول
-        public MeasurementUnit Unit { get; set; } //واحد اندازه گیری
+        public int Quantity { get; set; }           //تعداد محصول
+        public decimal Price { get; set; }          // قیمت خرید
+        public DateTime ExpiryDate { get; set; }    //تاریخ انقضا
+        public string Description { get; set; }     //توضیحات محصول
+        public Warehouse Warehouse { get; set; }    //ارجاع به انیار
+        public ProductStatus Status { get; set; }   // وضعیت محصول
+        public MeasurementUnit Unit { get; set; }   //واحد اندازه گیری
+        public Person Supplier { get; set; }        //نام تامین کننده کالا
+
         public string UnitName
         { 
             get { return Unit != null ? Unit.Name : "No Unit"; } 
@@ -31,6 +35,11 @@ namespace BaseBackend.Entities
         public string WarehouseName
         {
             get { return Warehouse != null ? Warehouse.Name : "No Warehouse"; }
+        }
+
+        public string SupplierFullName
+        { 
+            get { return Supplier != null ? Supplier.FullName : "شخص مورد نظر پیدا نشد"; }
         }
 
         //public DateTime CreatedAt { get; set; } //تاریخ ایجاد
@@ -46,34 +55,34 @@ namespace BaseBackend.Entities
         //   کلاس سازنده محصولات
         public Product()
         {
-            Id = nextId;
-            nextId++;
+            Id = nextId++;
         }
-        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price):this()
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit):this()
         {
             Name = name;
             Category = category;
             Quantity = quantity;
             Unit = unit;
+        }
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price, ProductStatus? status = null) :this(name, category, quantity, unit)
+        {
+            Status = status ?? ProductStatus.Available;
             Price = price;
         }
-        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,Warehouse warehouse,DateTime expiryDate, string description):this(name,category,quantity,unit,price)
+        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit, decimal price,Warehouse warehouse, Person supplier,DateTime expiryDate, string description, ProductStatus? status = null)
+            :this(name,category,quantity,unit,price, status)
         {
             Warehouse = warehouse;
+            Supplier = supplier;
             ExpiryDate = expiryDate;
             Description = description;
-            Status = ProductStatus.InStock;
         }
-        public Product(string name, ProductCategory category, int quantity, MeasurementUnit unit)
-        {
-            Name = name;
-            Category = category;
-            Quantity = quantity;
-            Unit = unit;
-        }
+
         #endregion
 
         #region Method
+        //مقداردهی اولیه به وضعیت کالا
+        private void InitialStatus() => Status = ProductStatus.Available;
         // متد برای به‌روزرسانی موجودی کالا
         public void UpdateQuantity(int newQuantity)
         {
@@ -83,7 +92,7 @@ namespace BaseBackend.Entities
                 return;
         }
         // متد برای چک کردن موجودی
-        public bool IsInStock(int quantity)
+        public bool IsAvailable(int quantity)
         {
             return Quantity > quantity;
         }
@@ -97,7 +106,7 @@ namespace BaseBackend.Entities
         // متد برای کاهش موجودی پس از فروش کالا
         public bool SellProduct(int quantity)
         {
-            if (IsInStock(quantity))
+            if (IsAvailable(quantity))
             {
                 Quantity -= quantity;
                 return true;  // فروش موفقیت‌آمیز بود

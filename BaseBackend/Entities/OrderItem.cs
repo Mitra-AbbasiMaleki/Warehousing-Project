@@ -4,7 +4,7 @@ namespace BaseBackend.Entities
 {
     public class OrderItem:IBaseEntity
     {
-        int nextid = 0;
+        private readonly int nextId = 1;
         public int Id { get; set; } //شناسه جزئیات سفارش
         public Product Product { get; set; }  //محصول انتخاب شدده
         public decimal Quantity { get; set; } //تعداد محصول در سفارش
@@ -28,8 +28,7 @@ namespace BaseBackend.Entities
 
         public OrderItem()
         {
-            Id = nextid;
-            nextid++;
+            Id = nextId++;
         }
         public OrderItem(Product product,decimal quantity,MeasurementUnit unit):this()
         {

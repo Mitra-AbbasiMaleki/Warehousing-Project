@@ -30,22 +30,22 @@ namespace Warehousing.Utilities
         public static Product Mobile1 = new Product(name: "آیفون13", category: Electronics, quantity: 120, unit: Pieces, price: 320000000);
         public static Product Mobile2 = new Product(name: "سامسونگ s23", category: Electronics, quantity: 200, unit: Pieces, price: 450000000);
         public static Product Laptop = new Product(name: "ASUS لپ تاپ ", category: Electronics, quantity: 80, unit: Pieces, price: 540000000);
-        public static Product Butter = new Product(name: "کره پاک", category: Grocery, quantity: 150, unit: Box, price: 200000, warehouse: centralWarehouse, expiryDate: new DateTime(2025, 05, 01), description: "delicious");
-        public static Product Milk = new Product(name: "چیر پرچرب دامدادران", category: Grocery, quantity: 100, unit: Litre, price: 320000, warehouse: centralWarehouse, expiryDate: new DateTime(2024, 12, 10), description: "delicious");
+        public static Product Butter = new Product(name: "کره پاک", category: Grocery, quantity: 150, unit: Box, price: 200000, warehouse: centralWarehouse, supplier:supplier1,expiryDate: new DateTime(2025, 05, 01), description: "delicious");
+        public static Product Milk = new Product(name: "چیر پرچرب دامدادران", category: Grocery, quantity: 100, unit: Litre, price: 320000, warehouse: centralWarehouse, supplier: supplier1, expiryDate: new DateTime(2024, 12, 10), description: "delicious");
         public static Product TShirt = new Product(name: "کت چرم ", category: Clothing, quantity: 120, unit: Pieces, price: 5400000);
         public static Product Sofa = new Product(name: "ست هفت نفره یاتاش ", category: Furniture, quantity: 50, unit: Set, price: 360000000);
         public static Product Table = new Product(name: "میز کامپیوتر ", category: Furniture, quantity: 50, unit: Pieces, price: 220000000);
-        public static Product Rice = new Product(name: "برنج هاشمی", category: Grocery, quantity: 100, unit: Kilogeram, price: 23000000, warehouse: centralWarehouse, expiryDate: new DateTime(2024, 09, 01), description: "delicious");
+        public static Product Rice = new Product(name: "برنج هاشمی", category: Grocery, quantity: 100, unit: Kilogeram, price: 23000000, warehouse: centralWarehouse, supplier: supplier1, expiryDate: new DateTime(2024, 09, 01), description: "delicious");
         public static List<Product> products = new List<Product> { Mobile1, Mobile2, Laptop, Butter, Milk, TShirt, Rice, Table, Sofa };
 
-        public static Address address1 = new Address(name:AddressTitle.WORK,province: "تهران", city: "تهران", street: "آزادی", number: "12");
-        public static Address address2 = new Address(name: AddressTitle.WORK, province: "البرز", city: "کرج", street: "طالقانی", number: "54");
-        public static Address address3 = new Address(name: AddressTitle.HOME, province: "آذربایجانشرقی", city: "تبریز", street: "شهناز", number: "78");
-        public static Address address4 = new Address(name: AddressTitle.HOME, province: "اصفهان", city: "اصفهان", street: "کاشانی", number: "22");
-        public static Address address5 = new Address(name: AddressTitle.WORK, province: "گیلان", city: "رشت", street: "بلوار امام", number: "65");
-        public static Address address6 = new Address(name: AddressTitle.WORK, province: "مازندران", city: "ساری", street: "فرهنگ", number: "98");
-        public static Address address7 = new Address(name: AddressTitle.HOME, province: "آذربایجان غربی", city: "ارومیه", street: "خیام", number: "31");
-        public static Address address8 = new Address(name: AddressTitle.OTHER, province: "آذربایجان شرقی", city: "تبریز", street: "ولیعصر", number: "78");
+        public static Address address1 = new Address(title: AddressTitle.WORK, province: "تهران", city: "تهران", street: "آزادی", number: "12");
+        public static Address address2 = new Address(title: AddressTitle.WORK, province: "البرز", city: "کرج", street: "طالقانی", number: "54");
+        public static Address address3 = new Address(title: AddressTitle.HOME, province: "آذربایجانشرقی", city: "تبریز", street: "شهناز", number: "78");
+        public static Address address4 = new Address(title: AddressTitle.HOME, province: "اصفهان", city: "اصفهان", street: "کاشانی", number: "22");
+        public static Address address5 = new Address(title: AddressTitle.WORK, province: "گیلان", city: "رشت", street: "بلوار امام", number: "65");
+        public static Address address6 = new Address(title: AddressTitle.WORK, province: "مازندران", city: "ساری", street: "فرهنگ", number: "98");
+        public static Address address7 = new Address(title: AddressTitle.HOME, province: "آذربایجان غربی", city: "ارومیه", street: "خیام", number: "31");
+        public static Address address8 = new Address(title: AddressTitle.OTHER, province: "آذربایجان شرقی", city: "تبریز", street: "ولیعصر", number: "78");
         public static List<Address> Adresses = new List<Address>() { address1, address2, address3, address4, address5, address6, address7, address8 };
 
         public static Person Admin = new SystemUser(role: UserRole.ADMIN, firstName: "میترا", lastName: "عباسی", nationalCode: "5310111107", phoneNumber: "09123456789", address: address1);

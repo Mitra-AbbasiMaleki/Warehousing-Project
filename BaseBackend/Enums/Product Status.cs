@@ -1,9 +1,16 @@
-﻿namespace BaseBackend.Enums
+﻿using System.ComponentModel;
+
+namespace BaseBackend.Enums
 {
     public enum ProductStatus
     {
-        InStock,       // موجود در انبار
-        OutOfStock,    // ناموجود
-        BackOrdered,   // در حال سفارش
+        [Description("موجود")]
+        Available,       
+
+        [Description("ناموجود")]
+        Unavailable,     
+
+        [Description("سفارش داده شده")]
+        BackOrdered,   
     }
 }

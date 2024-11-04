@@ -32,7 +32,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblAccesslevel = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.cmbAccessLevel = new System.Windows.Forms.ComboBox();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.grpLogin.Controls.Add(this.btnLogin);
             this.grpLogin.Controls.Add(this.lblAccesslevel);
             this.grpLogin.Controls.Add(this.lblPassword);
-            this.grpLogin.Controls.Add(this.cmbAccessLevel);
+            this.grpLogin.Controls.Add(this.cmbUserRole);
             this.grpLogin.Controls.Add(this.txtPassword);
             this.grpLogin.Controls.Add(this.txtUserName);
             this.grpLogin.Controls.Add(this.lblUsername);
@@ -93,15 +93,16 @@
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "رمز عبور :";
             // 
-            // cmbAccessLevel
+            // cmbUserRole
             // 
-            this.cmbAccessLevel.FormattingEnabled = true;
-            this.cmbAccessLevel.Location = new System.Drawing.Point(57, 171);
-            this.cmbAccessLevel.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbAccessLevel.Name = "cmbAccessLevel";
-            this.cmbAccessLevel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbAccessLevel.Size = new System.Drawing.Size(234, 27);
-            this.cmbAccessLevel.TabIndex = 5;
+            this.cmbUserRole.FormattingEnabled = true;
+            this.cmbUserRole.Location = new System.Drawing.Point(57, 171);
+            this.cmbUserRole.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbUserRole.Name = "cmbUserRole";
+            this.cmbUserRole.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbUserRole.Size = new System.Drawing.Size(234, 27);
+            this.cmbUserRole.TabIndex = 5;
+            this.cmbUserRole.SelectedIndexChanged += new System.EventHandler(this.cmbUserRole_SelectedIndexChanged);
             // 
             // txtPassword
             // 
@@ -113,7 +114,7 @@
             this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPassword.Size = new System.Drawing.Size(234, 27);
             this.txtPassword.TabIndex = 4;
-            this.txtPassword.Text = "admin";
+            this.txtPassword.Text = "Admin";
             // 
             // txtUserName
             // 
@@ -124,7 +125,7 @@
             this.txtUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUserName.Size = new System.Drawing.Size(234, 27);
             this.txtUserName.TabIndex = 3;
-            this.txtUserName.Text = "admin";
+            this.txtUserName.Text = "Admin";
             // 
             // lblUsername
             // 
@@ -195,7 +196,7 @@
 
         private System.Windows.Forms.GroupBox grpLogin;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.ComboBox cmbAccessLevel;
+        private System.Windows.Forms.ComboBox cmbUserRole;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;

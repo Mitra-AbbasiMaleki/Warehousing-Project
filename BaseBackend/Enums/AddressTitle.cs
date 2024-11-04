@@ -1,9 +1,16 @@
-﻿namespace BaseBackend.Enums
+﻿using System.ComponentModel;
+
+namespace BaseBackend.Enums
 {
     public enum AddressTitle
     {
-        HOME,           //منزل
-        WORK,     //محل کار
+        [Description("منزل")]
+        HOME,
+
+        [Description("محل کار")]
+        WORK,
+
+        [Description("دیگر")]
         OTHER   // دیگر
     }
 }
