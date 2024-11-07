@@ -8,7 +8,7 @@ namespace BaseBackend.Entities
 {
     public class UserLogin : IBaseEntity
     {
-        int nextid = 1;
+        private static int nextid = 1;
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }

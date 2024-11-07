@@ -7,7 +7,7 @@ namespace BaseBackend.Entities
 {
     public class MeasurementUnit:IBaseEntity
     {
-        private readonly int nextId = 1;
+        private static int nextId = 1;
         public int Id { get; set; }
         public string Name { get; set; }
         public MeasurementUnit(string name)

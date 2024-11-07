@@ -4,7 +4,7 @@ namespace BaseBackend.Entities
 {
     public class OrderItem:IBaseEntity
     {
-        private readonly int nextId = 1;
+        private static int nextId = 1;
         public int Id { get; set; } //شناسه جزئیات سفارش
         public Product Product { get; set; }  //محصول انتخاب شدده
         public decimal Quantity { get; set; } //تعداد محصول در سفارش

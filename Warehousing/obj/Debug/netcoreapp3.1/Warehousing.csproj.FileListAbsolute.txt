@@ -94,3 +94,4 @@ C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\netcoreapp3.1\Data\categoriesFile.json
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\netcoreapp3.1\Data\unitsFile.json
 C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\bin\Debug\netcoreapp3.1\Data\loginFile.json
+C:\Users\HojjatShariffam\source\repos\Warehousing-Project\Warehousing\obj\Debug\netcoreapp3.1\Warehousing.WarehouseForm.resources

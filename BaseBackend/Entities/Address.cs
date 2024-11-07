@@ -7,7 +7,7 @@ namespace BaseBackend.Entities
     [DebuggerDisplay("Address {Name}: {City} - {Street}.")]
     public class Address : IBaseEntity
     {
-        private readonly int nextId = 1; 
+        private static int nextId = 1; 
         public int Id { get; set; }                    // شناسه آدرس
         public AddressTitle Title { get; set; }                  //عنوان محل آدرس
         public int PersonId { get; set; }              // شناسه شخص

@@ -7,7 +7,7 @@ namespace BaseBackend.Entities
 {
     public class ProductCategory: IBaseEntity
     {
-        private readonly int nextId = 1;
+        private static int nextId = 1;
         public int Id { get; set; }
         public string CategoryName { get; set; }
         public ProductCategory(string categoryName)

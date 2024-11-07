@@ -8,8 +8,8 @@ namespace Warehousing.Utilities
 {
     public static class Storage
     {
-        public static Warehouse centralWarehouse = new Warehouse(name: "مرکزی", location: "تهران");
-        public static Warehouse wasteWarehouse = new Warehouse(name: "ضایعات", location: "کرج");
+        public static Warehouse centralWarehouse = new Warehouse(name: "مرکزی", location: "تهران",isAcive:true);
+        public static Warehouse wasteWarehouse = new Warehouse(name: "ضایعات", location: "کرج",isAcive:false);
         public static List<Warehouse> warehouses = new List<Warehouse>() { centralWarehouse, wasteWarehouse };
 
         public static ProductCategory Electronics = new ProductCategory("الکترونیکی");

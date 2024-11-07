@@ -33,11 +33,13 @@ namespace Warehousing
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.personMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.newPersonMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPersonMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.productMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newProductMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.orderMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newOrderMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.warehouseMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWarehouseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@ namespace Warehousing
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.personMenu,
             this.productMenu,
-            this.orderMenu});
+            this.orderMenu,
+            this.warehouseMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
@@ -58,17 +61,17 @@ namespace Warehousing
             // personMenu
             // 
             this.personMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newPersonMenuItem});
+            this.newPersonMenu});
             this.personMenu.Name = "personMenu";
             this.personMenu.Size = new System.Drawing.Size(127, 23);
             this.personMenu.Text = "مدیریت اشخاص";
             // 
-            // newPersonMenuItem
+            // newPersonMenu
             // 
-            this.newPersonMenuItem.Name = "newPersonMenuItem";
-            this.newPersonMenuItem.Size = new System.Drawing.Size(205, 24);
-            this.newPersonMenuItem.Text = "تعریف شخص جدید";
-            this.newPersonMenuItem.Click += new System.EventHandler(this.NewPersonMenuItem_Click);
+            this.newPersonMenu.Name = "newPersonMenu";
+            this.newPersonMenu.Size = new System.Drawing.Size(205, 24);
+            this.newPersonMenu.Text = "تعریف شخص جدید";
+            this.newPersonMenu.Click += new System.EventHandler(this.NewProductMenu_Click);
             // 
             // productMenu
             // 
@@ -100,6 +103,21 @@ namespace Warehousing
             this.newOrderMenu.Text = "تعریف سفارش جدید";
             this.newOrderMenu.Click += new System.EventHandler(this.NewOrderMenu_Click);
             // 
+            // warehouseMenu
+            // 
+            this.warehouseMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newWarehouseMenu});
+            this.warehouseMenu.Name = "warehouseMenu";
+            this.warehouseMenu.Size = new System.Drawing.Size(98, 23);
+            this.warehouseMenu.Text = "مدیریت انبار";
+            // 
+            // newWarehouseMenu
+            // 
+            this.newWarehouseMenu.Name = "newWarehouseMenu";
+            this.newWarehouseMenu.Size = new System.Drawing.Size(184, 24);
+            this.newWarehouseMenu.Text = "تعریف انبار جدید";
+            this.newWarehouseMenu.Click += new System.EventHandler(this.NewWarehouseMenu_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -108,7 +126,7 @@ namespace Warehousing
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "صفحه اصلی";
@@ -123,10 +141,12 @@ namespace Warehousing
 
         private MenuStrip menuStrip;
         private ToolStripMenuItem personMenu;
-        private ToolStripMenuItem newPersonMenuItem;
+        private ToolStripMenuItem newPersonMenu;
         private ToolStripMenuItem productMenu;
         private ToolStripMenuItem newProductMenu;
         private ToolStripMenuItem orderMenu;
         private ToolStripMenuItem newOrderMenu;
+        private ToolStripMenuItem warehouseMenu;
+        private ToolStripMenuItem newWarehouseMenu;
     }
 }

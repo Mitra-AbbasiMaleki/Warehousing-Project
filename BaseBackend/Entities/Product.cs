@@ -11,7 +11,7 @@ namespace BaseBackend.Entities
     public class Product : IBaseEntity
     {
         #region property
-        private readonly int nextId = 1;
+        private static int nextId = 1;
         public int Id { get; set; }   // شناسه محصول
         public string Name { get; set; }     // نام محصول
         public ProductCategory Category { get; set; } //گروه محصول
@@ -28,6 +28,10 @@ namespace BaseBackend.Entities
         public MeasurementUnit Unit { get; set; }   //واحد اندازه گیری
         public Person Supplier { get; set; }        //نام تامین کننده کالا
 
+        public override string ToString()
+        {
+            return Name; // نام محصول را باز می‌گرداند
+        }
         public string UnitName
         { 
             get { return Unit != null ? Unit.Name : "No Unit"; } 

@@ -1,19 +1,22 @@
 ﻿using BaseBackend.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 namespace BaseBackend.Entities
 {
+    [DebuggerDisplay("Warehouse Name : {Name}")]
     public class Warehouse: IBaseEntity
     {
         // خصوصیات انبار
-        private readonly int nextId = 1;  //متغیر static برای تولید Id بعدی
-        public int Id { get; set; }          // شناسه انبار
-        public string Name { get; set; }   //نام انبار 
-        public string Location { get; set; }          // مکان انبار
-
-        public List<Product> products; //لیست محصولات
+        private static int nextId = 1;          //متغیر static برای تولید Id بعدی
+        public int Id { get; set; }             // شناسه انبار
+        public string Name { get; set; }        //نام انبار 
+        public string Location { get; set; }    // مکان انبار
+        public bool IsActive { get; set; }      //فعال یا غیر فعال بودن انبار
+        
+        public List<Product> products;          //لیست محصولات
         // سازنده
         public Warehouse()
         {
@@ -23,9 +26,10 @@ namespace BaseBackend.Entities
         {
             Name = name;
         }
-        public Warehouse(string name,string location):this(name)
+        public Warehouse(string name,string location,bool isAcive):this(name)
         {
             Location = location;
+            IsActive = isAcive;
             products = new List<Product>();// لیستی از محصولات
         }
 

@@ -38,10 +38,18 @@ namespace Warehousing
             OrderForm orderForm = new OrderForm();
             orderForm.Show();
         }
+
+        // رویداد برای کلیک بر روی انبار جدید
+        private void NewWarehouseMenu_Click(object sender, EventArgs e)
+        {
+            WarehouseForm warehouseForm = new WarehouseForm();
+            warehouseForm.Show();
+        }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
+
     }
 }
 
