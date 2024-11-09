@@ -167,13 +167,14 @@ namespace Warehousing
             // 
             // btnCustomerRegister
             // 
+            this.btnCustomerRegister.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCustomerRegister.Location = new System.Drawing.Point(21, 242);
             this.btnCustomerRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCustomerRegister.Name = "btnCustomerRegister";
             this.btnCustomerRegister.Size = new System.Drawing.Size(375, 44);
             this.btnCustomerRegister.TabIndex = 9;
             this.btnCustomerRegister.Text = "ثبت مشتری";
-            this.btnCustomerRegister.UseVisualStyleBackColor = true;
+            this.btnCustomerRegister.UseVisualStyleBackColor = false;
             this.btnCustomerRegister.Click += new System.EventHandler(this.btnCustomerRegister_Click);
             // 
             // lblCity
@@ -371,6 +372,7 @@ namespace Warehousing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1020, 578);
             this.Controls.Add(this.grpPerson);
             this.Controls.Add(this.personDataGridView);

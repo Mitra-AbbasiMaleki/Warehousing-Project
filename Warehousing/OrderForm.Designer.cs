@@ -78,28 +78,6 @@ namespace Warehousing
             this.orderDataGridView.Size = new System.Drawing.Size(969, 264);
             this.orderDataGridView.TabIndex = 0;
             this.orderDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderDataGridView_CellClick);
-            this.orderDataGridView.Columns.Add("Id", "ردیف");
-            this.orderDataGridView.Columns["Id"].ReadOnly = true;
-
-            this.orderDataGridView.Columns.Add("ProductId", "کد محصول");
-            this.orderDataGridView.Columns["ProductId"].ReadOnly = true;
-
-            this.orderDataGridView.Columns.Add("ProductName", "نام محصول");
-            this.orderDataGridView.Columns["ProductName"].ReadOnly = true;
-
-            this.orderDataGridView.Columns.Add("Quantity", "تعداد سفارش");
-            this.orderDataGridView.Columns["Quantity"].ReadOnly = true;
-
-            this.orderDataGridView.Columns.Add("Unit", "واحد محصول");
-            this.orderDataGridView.Columns["Unit"].ReadOnly = true;
-
-            this.orderDataGridView.Columns.Add("Price", "قیمت محصول");
-            this.orderDataGridView.Columns["Price"].ReadOnly = true;
-            this.orderDataGridView.Columns["Price"].DefaultCellStyle.Format = "N0";
-
-            this.orderDataGridView.Columns.Add("TotalProductPrice", "قیمت کل محصول");
-            this.orderDataGridView.Columns["TotalProductPrice"].ReadOnly = true;
-            this.orderDataGridView.Columns["TotalProductPrice"].DefaultCellStyle.Format = "N0";
             // 
             // grpOrder
             // 
@@ -257,45 +235,49 @@ namespace Warehousing
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnEdit.Location = new System.Drawing.Point(633, 40);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(106, 32);
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "ویرایش";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
             this.btnDelete.Location = new System.Drawing.Point(745, 40);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 32);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "حذف";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.LightBlue;
             this.btnAdd.Location = new System.Drawing.Point(857, 40);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 32);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "اضافه";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnOrderRegistration
             // 
+            this.btnOrderRegistration.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnOrderRegistration.Location = new System.Drawing.Point(6, 27);
             this.btnOrderRegistration.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOrderRegistration.Name = "btnOrderRegistration";
             this.btnOrderRegistration.Size = new System.Drawing.Size(217, 55);
             this.btnOrderRegistration.TabIndex = 10;
             this.btnOrderRegistration.Text = "ثبت سفارش";
-            this.btnOrderRegistration.UseVisualStyleBackColor = true;
+            this.btnOrderRegistration.UseVisualStyleBackColor = false;
             this.btnOrderRegistration.Click += new System.EventHandler(this.btnOrderRegistration_Click);
             // 
             // comboBox2
@@ -387,12 +369,13 @@ namespace Warehousing
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.Thistle;
             this.btnSave.Location = new System.Drawing.Point(521, 40);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 32);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "اعمال تغییرات";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -400,6 +383,7 @@ namespace Warehousing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(993, 727);
             this.Controls.Add(this.grpAction);
             this.Controls.Add(this.grpOperation);

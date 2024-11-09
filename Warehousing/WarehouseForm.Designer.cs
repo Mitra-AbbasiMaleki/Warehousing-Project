@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.grpNewWarehouse = new System.Windows.Forms.GroupBox();
-            this.btnAddWarehouse = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkProductsWithoutStorage = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdoActive = new System.Windows.Forms.RadioButton();
             this.rdoDisactive = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAddWarehouse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkProductsWithoutStorage = new System.Windows.Forms.CheckedListBox();
             this.txtWarehouseAddress = new System.Windows.Forms.TextBox();
             this.txtWarehouseName = new System.Windows.Forms.TextBox();
             this.grpNewWarehouse.SuspendLayout();
@@ -63,24 +63,22 @@
             this.grpNewWarehouse.TabStop = false;
             this.grpNewWarehouse.Text = "تعریف انبار جدید";
             // 
-            // btnAddWarehouse
+            // label3
             // 
-            this.btnAddWarehouse.Location = new System.Drawing.Point(50, 269);
-            this.btnAddWarehouse.Name = "btnAddWarehouse";
-            this.btnAddWarehouse.Size = new System.Drawing.Size(303, 51);
-            this.btnAddWarehouse.TabIndex = 7;
-            this.btnAddWarehouse.Text = "ثبت انبار جدید";
-            this.btnAddWarehouse.UseVisualStyleBackColor = true;
-            this.btnAddWarehouse.Click += new System.EventHandler(this.btnAddWarehouse_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(294, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "لیست محصولات انبار :";
             // 
-            // label4
+            // chkProductsWithoutStorage
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(293, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "وضعیت  انبار : ";
+            this.chkProductsWithoutStorage.FormattingEnabled = true;
+            this.chkProductsWithoutStorage.Location = new System.Drawing.Point(51, 141);
+            this.chkProductsWithoutStorage.Name = "chkProductsWithoutStorage";
+            this.chkProductsWithoutStorage.Size = new System.Drawing.Size(237, 112);
+            this.chkProductsWithoutStorage.TabIndex = 3;
             // 
             // panel1
             // 
@@ -113,14 +111,25 @@
             this.rdoDisactive.Text = "غیرفعال";
             this.rdoDisactive.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "لیست محصولات انبار :";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(293, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "وضعیت  انبار : ";
+            // 
+            // btnAddWarehouse
+            // 
+            this.btnAddWarehouse.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddWarehouse.Location = new System.Drawing.Point(50, 269);
+            this.btnAddWarehouse.Name = "btnAddWarehouse";
+            this.btnAddWarehouse.Size = new System.Drawing.Size(303, 51);
+            this.btnAddWarehouse.TabIndex = 7;
+            this.btnAddWarehouse.Text = "ثبت انبار جدید";
+            this.btnAddWarehouse.UseVisualStyleBackColor = false;
+            this.btnAddWarehouse.Click += new System.EventHandler(this.btnAddWarehouse_Click);
             // 
             // label2
             // 
@@ -140,14 +149,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "نام انبار : ";
             // 
-            // chkProductsWithoutStorage
-            // 
-            this.chkProductsWithoutStorage.FormattingEnabled = true;
-            this.chkProductsWithoutStorage.Location = new System.Drawing.Point(51, 141);
-            this.chkProductsWithoutStorage.Name = "chkProductsWithoutStorage";
-            this.chkProductsWithoutStorage.Size = new System.Drawing.Size(237, 112);
-            this.chkProductsWithoutStorage.TabIndex = 3;
-            // 
             // txtWarehouseAddress
             // 
             this.txtWarehouseAddress.Location = new System.Drawing.Point(50, 65);
@@ -166,6 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(467, 392);
             this.Controls.Add(this.grpNewWarehouse);
             this.Name = "WarehouseForm";

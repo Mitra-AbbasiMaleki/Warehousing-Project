@@ -158,13 +158,14 @@ namespace Warehousing
             // 
             // btnProductRegistration
             // 
+            this.btnProductRegistration.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnProductRegistration.Location = new System.Drawing.Point(36, 305);
             this.btnProductRegistration.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductRegistration.Name = "btnProductRegistration";
             this.btnProductRegistration.Size = new System.Drawing.Size(380, 48);
             this.btnProductRegistration.TabIndex = 14;
             this.btnProductRegistration.Text = "ثبت کالا";
-            this.btnProductRegistration.UseVisualStyleBackColor = true;
+            this.btnProductRegistration.UseVisualStyleBackColor = false;
             this.btnProductRegistration.Click += new System.EventHandler(this.btnProductRegistration_Click);
             // 
             // lblDescription
@@ -369,6 +370,7 @@ namespace Warehousing
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1007, 617);
             this.Controls.Add(this.grpNewPruduct);
             this.Controls.Add(this.productDataGridView);

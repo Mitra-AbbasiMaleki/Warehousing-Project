@@ -45,12 +45,14 @@ namespace Warehousing
             // 
             // menuStrip
             // 
+            this.menuStrip.BackColor = System.Drawing.Color.LightSeaGreen;
             this.menuStrip.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.personMenu,
             this.productMenu,
             this.orderMenu,
             this.warehouseMenu});
+            this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
@@ -71,7 +73,7 @@ namespace Warehousing
             this.newPersonMenu.Name = "newPersonMenu";
             this.newPersonMenu.Size = new System.Drawing.Size(205, 24);
             this.newPersonMenu.Text = "تعریف شخص جدید";
-            this.newPersonMenu.Click += new System.EventHandler(this.NewProductMenu_Click);
+            this.newPersonMenu.Click += new System.EventHandler(this.NewPersonMenuItem_Click);
             // 
             // productMenu
             // 
@@ -122,6 +124,7 @@ namespace Warehousing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(572, 343);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

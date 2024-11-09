@@ -45,48 +45,49 @@
             // 
             // grpLogin
             // 
-            this.grpLogin.Controls.Add(this.btnLogin);
-            this.grpLogin.Controls.Add(this.lblAccesslevel);
+            this.grpLogin.Controls.Add(this.lblUsername);
             this.grpLogin.Controls.Add(this.lblPassword);
+            this.grpLogin.Controls.Add(this.lblAccesslevel);
+            this.grpLogin.Controls.Add(this.btnLogin);
             this.grpLogin.Controls.Add(this.cmbUserRole);
             this.grpLogin.Controls.Add(this.txtPassword);
             this.grpLogin.Controls.Add(this.txtUserName);
-            this.grpLogin.Controls.Add(this.lblUsername);
             this.grpLogin.Location = new System.Drawing.Point(15, 123);
             this.grpLogin.Margin = new System.Windows.Forms.Padding(4);
             this.grpLogin.Name = "grpLogin";
             this.grpLogin.Padding = new System.Windows.Forms.Padding(4);
             this.grpLogin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grpLogin.Size = new System.Drawing.Size(462, 314);
+            this.grpLogin.Size = new System.Drawing.Size(429, 314);
             this.grpLogin.TabIndex = 0;
             this.grpLogin.TabStop = false;
             this.grpLogin.Text = "اطلاعات ورود";
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogin.Location = new System.Drawing.Point(57, 241);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(235, 52);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "ورود";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblAccesslevel
             // 
             this.lblAccesslevel.AutoSize = true;
-            this.lblAccesslevel.Location = new System.Drawing.Point(333, 175);
+            this.lblAccesslevel.Location = new System.Drawing.Point(310, 174);
             this.lblAccesslevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAccesslevel.Name = "lblAccesslevel";
-            this.lblAccesslevel.Size = new System.Drawing.Size(131, 19);
+            this.lblAccesslevel.Size = new System.Drawing.Size(57, 19);
             this.lblAccesslevel.TabIndex = 2;
-            this.lblAccesslevel.Text = "سطح دسترسی :";
+            this.lblAccesslevel.Text = "عنوان :";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(333, 109);
+            this.lblPassword.Location = new System.Drawing.Point(310, 108);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(74, 19);
@@ -130,7 +131,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(333, 54);
+            this.lblUsername.Location = new System.Drawing.Point(310, 54);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(87, 19);
@@ -146,7 +147,7 @@
             this.grpTime.Name = "grpTime";
             this.grpTime.Padding = new System.Windows.Forms.Padding(4);
             this.grpTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grpTime.Size = new System.Drawing.Size(460, 81);
+            this.grpTime.Size = new System.Drawing.Size(427, 81);
             this.grpTime.TabIndex = 1;
             this.grpTime.TabStop = false;
             this.grpTime.Text = "تاریخ و زمان";
@@ -154,7 +155,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(332, 35);
+            this.lblDate.Location = new System.Drawing.Point(266, 35);
             this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(41, 19);
@@ -176,7 +177,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 443);
+            this.BackColor = System.Drawing.Color.MintCream;
+            this.ClientSize = new System.Drawing.Size(455, 443);
             this.Controls.Add(this.grpLogin);
             this.Controls.Add(this.grpTime);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

@@ -130,6 +130,7 @@ namespace Warehousing
             txtCity.Text = string.Empty;
             txtStreet.Text = string.Empty;
             txtNumber.Text = string.Empty;
+            txtCompanyName.Text = string.Empty;
         }
 
         private void PersonForm_Load(object sender, EventArgs e)
@@ -160,15 +161,16 @@ namespace Warehousing
                 case 1:
                 case 2:
                     txtCompanyName.Enabled = false;
-                    RefreshDataGridView(Storage.People);
+                    RefreshDataGridView(Storage.People.OfType<SystemUser>().ToList());
                     break;
                 case 3:
                     txtCompanyName.Enabled = false;
-                    RefreshDataGridView(Storage.People);
+                    RefreshDataGridView(Storage.People.OfType<Customer>().ToList());
                     break;
                 case 4:
                     txtCompanyName.Enabled = true;
-                    RefreshDataGridView(Storage.People);
+                    RefreshDataGridView(Storage.People.OfType<Supplier>().ToList());
+                    
                     break;
                 default:
                     txtCompanyName.Enabled = false;
